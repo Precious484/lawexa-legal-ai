@@ -1,24 +1,38 @@
 import { Button } from '@/components/ui/button';
 import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
-
 const Footer = () => {
-  const quickLinks = [
-    { name: 'Blog', href: '#blog' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Features', href: '#features' },
-    { name: 'FAQs', href: '#faq' }
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
-  ];
-
-  return (
-    <footer className="bg-lawexa-dark text-white">
-      <div className="container mx-auto px-4 py-16">
+  const quickLinks = [{
+    name: 'Blog',
+    href: '#blog'
+  }, {
+    name: 'Pricing',
+    href: '#pricing'
+  }, {
+    name: 'Features',
+    href: '#features'
+  }, {
+    name: 'FAQs',
+    href: '#faq'
+  }];
+  const socialLinks = [{
+    icon: Facebook,
+    href: '#',
+    label: 'Facebook'
+  }, {
+    icon: Twitter,
+    href: '#',
+    label: 'Twitter'
+  }, {
+    icon: Linkedin,
+    href: '#',
+    label: 'LinkedIn'
+  }, {
+    icon: Instagram,
+    href: '#',
+    label: 'Instagram'
+  }];
+  return <footer className="bg-lawexa-dark text-white">
+      <div className="container mx-auto px-4 py-16 bg-slate-950">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -38,16 +52,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-primary transition-colors duration-200"
-                  >
+              {quickLinks.map(link => <li key={link.name}>
+                  <a href={link.href} className="text-gray-300 hover:text-primary transition-colors duration-200">
                     {link.name}
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -74,25 +83,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Social media</h3>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300"
-                >
+              {socialLinks.map(social => <a key={social.label} href={social.href} aria-label={social.label} className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
                   <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+                </a>)}
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-400 text-sm">
-            © 2024 Law Guide Technology Limited
-          </p>
+          <p className="text-gray-400 text-sm">© 2026 Law Guide Technology Limited</p>
           <div className="flex space-x-6 text-sm">
             <a href="#terms" className="text-gray-400 hover:text-primary transition-colors duration-200">
               Terms & Conditions
@@ -104,8 +104,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
