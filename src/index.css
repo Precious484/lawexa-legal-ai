@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Lawexa Design System - Premium Legal Intelligence Platform */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
+    --lawexa-gold: 51 100% 50%;
+    --lawexa-dark: 0 0% 10%;
+    --lawexa-light: 0 0% 96%;
+    --lawexa-brown-glow: 24 29% 23%;
+    
+    /* System Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 0 0% 10%;
+    
+    /* Primary - Lawexa Gold */
+    --primary: 51 100% 50%;
+    --primary-foreground: 0 0% 10%;
+    
+    /* Secondary - Clean neutrals */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 51 100% 50%;
+    
+    /* Design Tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--lawexa-dark)), hsl(var(--lawexa-dark)));
+    --gradient-glow: radial-gradient(circle, hsl(var(--lawexa-brown-glow) / 0.3), transparent);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--lawexa-gold)), hsl(51 100% 60%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-large: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
+    --shadow-gold: 0 10px 30px -10px hsl(var(--lawexa-gold) / 0.3);
+    
+    /* Animations */
+    --animation-fast: 0.2s ease-out;
+    --animation-medium: 0.3s ease-out;
+    --animation-slow: 0.6s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,103 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Hero Grid Animation */
+  .hero-grid {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    position: relative;
+  }
+  
+  .hero-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, var(--gradient-glow) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, var(--gradient-glow) 0%, transparent 50%),
+      radial-gradient(circle at 60% 20%, var(--gradient-glow) 0%, transparent 50%);
+    animation: glow-pulse 8s ease-in-out infinite;
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+  }
+  
+  /* Premium Button Variants */
+  .btn-gold {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold 
+           shadow-lg hover:shadow-gold transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-outline {
+    @apply border border-white text-white px-6 py-3 rounded-lg font-semibold 
+           hover:bg-white hover:text-foreground transition-all duration-300;
+  }
+  
+  .btn-dark {
+    @apply bg-black text-white px-6 py-3 rounded-lg font-semibold 
+           hover:bg-gray-800 transition-all duration-300 hover:scale-105;
+  }
+  
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-large;
+  }
+  
+  /* Fade In Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Typewriter Effect */
+  .typewriter {
+    border-right: 2px solid hsl(var(--lawexa-gold));
+    animation: blink-caret 1s step-end infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--lawexa-gold)); }
+  }
+  
+  /* Underline Animation */
+  .animated-underline {
+    position: relative;
+  }
+  
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: hsl(var(--lawexa-gold));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+  }
+  
+  .animated-underline.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }

@@ -1,12 +1,79 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import PlatformSection from '@/components/PlatformSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import VideoSection from '@/components/VideoSection';
+import PricingSection from '@/components/PricingSection';
+import DownloadSection from '@/components/DownloadSection';
+import FAQSection from '@/components/FAQSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
+  useEffect(() => {
+    // Smooth scroll behavior for anchor links
+    const handleSmoothScroll = (e: Event) => {
+      const target = e.target as HTMLAnchorElement;
+      if (target.hash) {
+        e.preventDefault();
+        const element = document.querySelector(target.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    // Add click listeners to all anchor links
+    const anchors = document.querySelectorAll('a[href^="#"]');
+    anchors.forEach(anchor => {
+      anchor.addEventListener('click', handleSmoothScroll);
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with fade-in class
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(el => observer.observe(el));
+
+    return () => {
+      anchors.forEach(anchor => {
+        anchor.removeEventListener('click', handleSmoothScroll);
+      });
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <HeroSection />
+        <section id="features">
+          <PlatformSection />
+        </section>
+        <TestimonialsSection />
+        <VideoSection />
+        <section id="pricing">
+          <PricingSection />
+        </section>
+        <DownloadSection />
+        <section id="faq">
+          <FAQSection />
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };
