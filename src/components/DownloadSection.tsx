@@ -1,8 +1,6 @@
 import { Button } from '@/components/ui/button';
-
 const DownloadSection = () => {
-  return (
-    <section className="py-20 bg-gray-50">
+  return <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between max-w-6xl mx-auto">
           {/* Content */}
@@ -21,7 +19,7 @@ const DownloadSection = () => {
                   <span className="text-black font-bold text-sm">📱</span>
                 </div>
                 <div className="text-left">
-                  <div className="text-xs text-gray-300">Download on the</div>
+                  <div className="text-xs text-xs text-gray-300 ">Download on the</div>
                   <div className="font-semibold">App Store</div>
                 </div>
               </Button>
@@ -77,8 +75,6 @@ const DownloadSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default DownloadSection;
