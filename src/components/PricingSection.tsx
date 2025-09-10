@@ -128,10 +128,10 @@ const PricingSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-800">
             Unlock Your Legal Advantage
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-500">
             Join 10,000+ professionals who save 15+ hours per week with AI-powered legal intelligence
           </p>
 
@@ -172,7 +172,7 @@ const PricingSection = () => {
                   </p>
                   
                   {/* Price */}
-                  <div className="text-5xl font-extrabold text-center mb-2 bg-slate-700">
+                  <div className="text-5xl font-extrabold text-center mb-2 bg-slate-900">
                     {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <span className="text-sm text-gray-500 line-through mr-2">
                         {plan.originalPrices[selectedPeriod]}
                       </span>}
