@@ -55,13 +55,7 @@ const PricingSection = () => {
       features: [
         'Database Access & Smart Search',
         'AI Tutor (Your 24/7 Study Companion)',
-        'Flashcard Generation',
-        'Picture-to-Note Conversion',
-        'Legal Contract Review',
-        'Course Notes & Study Materials',
-        'Exam Practice Mode',
-        '2 Documents/Month',
-        'Limited Smart Legal Assistant Access'
+        'Flashcard Generation & Picture-to-Note Conversion'
       ],
       buttonText: 'Claim Student Discount',
       buttonStyle: 'bg-white text-black hover:bg-gray-100',
@@ -93,12 +87,9 @@ const PricingSection = () => {
       perfectFor: '🎯 Perfect for: Professionals, entrepreneurs & everyday Nigerians who need legal clarity',
       description: 'Stop paying ₦50,000+ for simple legal consultations. Get unlimited access to Nigeria\'s most advanced legal AI that works 24/7 for a fraction of the cost of one lawyer visit.',
       features: [
-        'Legal Contract Generation',
+        'Legal Contract Generation & Analysis',
         'Smart Legal Assistant (Ask anything!)',
-        'Contract & Clause Analysis',
-        'Contract Chat (Talk to your contracts)',
-        'Smart Lawyer connect',
-        'Priority Support (Response in 2 hours)'
+        'Smart Lawyer Connect & Priority Support'
       ],
       buttonText: 'Get Lawexa Assistant',
       buttonStyle: 'bg-lawexa-gold text-black hover:bg-lawexa-gold/90',
@@ -130,14 +121,9 @@ const PricingSection = () => {
       perfectFor: '🎯 Perfect for: Growing teams who need collaborative legal intelligence',
       description: 'Equip your entire team with enterprise-grade legal AI. Perfect for startups, SMEs, and any business serious about legal compliance and efficiency.',
       features: [
-        'up to 5 User Accounts',
-        'Team Collaboration Workspace',
-        'Shared Document Libraries',
-        'Admin Dashboard & User Management',
-        'Usage Analytics & Reporting',
-        'Dedicated Account Manager',
-        'Custom Team Training Session',
-        'API Access for Business Integration'
+        'Up to 5 User Accounts & Team Collaboration',
+        'Admin Dashboard & Usage Analytics',
+        'Dedicated Account Manager & API Access'
       ],
       buttonText: 'Get Corporate Plan',
       buttonStyle: 'bg-white text-black hover:bg-gray-100',
@@ -170,20 +156,20 @@ const PricingSection = () => {
 
           {/* Pricing Toggle */}
           <div className="flex justify-center mb-8">
-            <div className="bg-gray-800 rounded-full p-1 flex items-center">
+            <div className="bg-muted rounded-full p-1 flex items-center shadow-soft">
               {periods.map((period) => (
                 <button
                   key={period.id}
                   onClick={() => setSelectedPeriod(period.id)}
-                  className={`px-4 py-2 font-semibold rounded-full transition-all duration-300 relative ${
+                  className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${
                     selectedPeriod === period.id
-                      ? 'bg-lawexa-gold text-black'
-                      : 'text-white hover:text-gray-300'
+                      ? 'bg-primary text-primary-foreground shadow-gold'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {period.label}
                   {period.saveLabel && selectedPeriod !== 'monthly' && (
-                    <span className="absolute top-0 right-0 -mt-2 -mr-2 bg-lawexa-gold text-black text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                    <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                       {period.saveLabel}
                     </span>
                   )}
@@ -200,29 +186,29 @@ const PricingSection = () => {
             return (
               <div
                 key={plan.name}
-                className={`relative bg-gray-900 p-8 rounded-2xl border flex flex-col ${
+                className={`relative bg-card p-8 rounded-2xl border flex flex-col ${
                   plan.popular
-                    ? 'border-l-4 border-l-lawexa-gold border-gray-600'
-                    : 'border-gray-600'
-                } hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl`}
+                    ? 'border-l-4 border-l-primary border-border'
+                    : 'border-border'
+                } hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-large card-hover`}
               >
                 {plan.popular && (
-                  <div className="absolute top-0 right-0 -mt-6 mr-4 py-1 px-4 rounded-full bg-lawexa-gold text-black text-sm font-bold">
+                  <div className="absolute top-0 right-0 -mt-6 mr-4 py-2 px-4 rounded-full bg-primary text-primary-foreground text-sm font-bold shadow-gold">
                     Most Popular
                   </div>
                 )}
 
                 {/* Icon */}
-                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-gray-700 mx-auto">
-                  <IconComponent className="w-8 h-8 text-lawexa-gold" />
+                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-muted mx-auto">
+                  <IconComponent className="w-8 h-8 text-primary" />
                 </div>
 
                 {/* Plan Header */}
                 <div className="text-center mb-6">
-                  <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-lawexa-gold">
+                  <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">
                     {plan.name}
                   </h3>
-                  <p className="font-bold text-lg mb-4 text-white">
+                  <p className="font-bold text-lg mb-4 text-foreground">
                     {plan.subtitle}
                   </p>
                   
@@ -235,15 +221,15 @@ const PricingSection = () => {
                     )}
                     {plan.prices[selectedPeriod]}
                   </div>
-                  <p className="text-sm text-gray-400 mb-6">
+                  <p className="text-sm text-muted-foreground mb-6">
                     {plan.period[selectedPeriod]}
                   </p>
 
                   {/* Perfect For & Description */}
-                  <p className="text-center font-semibold text-sm mb-4 text-lawexa-gold">
+                  <p className="text-center font-semibold text-sm mb-4 text-primary">
                     {plan.perfectFor}
                   </p>
-                  <p className="text-center text-sm mb-6 text-gray-300">
+                  <p className="text-center text-sm mb-6 text-muted-foreground">
                     {plan.description}
                   </p>
                 </div>
@@ -253,10 +239,10 @@ const PricingSection = () => {
                   <h4 className="font-bold mb-2">
                     {plan.name === 'Free Plan' ? 'What You Get:' : 'Everything in Free, PLUS:'}
                   </h4>
-                  <ul className="text-sm space-y-2 mb-6 text-gray-300">
+                  <ul className="text-sm space-y-3 mb-6 text-foreground">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-center">
-                        <Check className="h-5 w-5 mr-2 text-lawexa-gold flex-shrink-0" />
+                        <Check className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -265,19 +251,19 @@ const PricingSection = () => {
 
                 {/* Savings/Testimonial */}
                 {plan.savings && (
-                  <div className="bg-gray-800 p-4 rounded-lg mb-6 w-full">
-                    <p className="font-bold text-sm text-center text-gray-400">
+                  <div className="bg-muted p-4 rounded-lg mb-6 w-full">
+                    <p className="font-bold text-sm text-center text-foreground">
                       {plan.savings}
                     </p>
                   </div>
                 )}
 
                 {plan.testimonial && (
-                  <div className="bg-gray-800 p-4 rounded-lg mb-6 w-full">
-                    <p className="italic text-sm text-gray-400 mb-2">
+                  <div className="bg-muted p-4 rounded-lg mb-6 w-full">
+                    <p className="italic text-sm text-muted-foreground mb-2">
                       {plan.testimonial.quote}
                     </p>
-                    <p className="font-bold text-sm text-gray-300">
+                    <p className="font-bold text-sm text-foreground">
                       {plan.testimonial.author}
                     </p>
                   </div>
@@ -285,14 +271,20 @@ const PricingSection = () => {
 
                 {/* CTA Button */}
                 <div className="w-full mt-auto">
-                  <button className={`w-full px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 ${plan.buttonStyle}`}>
+                  <button className={`w-full px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-soft hover:shadow-medium ${
+                    plan.buttonStyle.includes('lawexa-gold') || plan.buttonStyle.includes('bg-white') 
+                      ? plan.buttonStyle.includes('lawexa-gold') 
+                        ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
+                        : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                      : plan.buttonStyle
+                  }`}>
                     {plan.buttonText}
                   </button>
                 </div>
 
                 {/* Bottom Text */}
                 {plan.bottomText && (
-                  <p className="text-xs text-center text-gray-500 mt-2">
+                  <p className="text-xs text-center text-muted-foreground mt-2">
                     {plan.bottomText}
                   </p>
                 )}
@@ -302,7 +294,7 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             All plans include 24/7 customer support and regular feature updates
           </p>
         </div>
