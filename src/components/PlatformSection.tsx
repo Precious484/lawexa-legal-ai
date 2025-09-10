@@ -3,81 +3,199 @@ import { Button } from '@/components/ui/button';
 
 const PlatformSection = () => {
   const [activeTab, setActiveTab] = useState('study');
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [showComparison, setShowComparison] = useState(false);
 
   const studyFeatures = [
     {
-      icon: '🤖',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
       title: 'AI Legal Tutor',
-      description: 'Get instant, clear answers to your legal questions with relevant authorities. Upload and Chat with any Material so you never get stuck on complex concepts again'
+      description: 'Get instant, clear answers to your legal questions with relevant authorities. Upload and Chat with any Material so you never get stuck on complex concepts again.',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=AI+Legal+Tutor'
     },
     {
-      icon: '📚',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      ),
       title: 'Cases and Statutes Library',
-      description: 'Search over 20,000 cases and statutes with easy to understand summary and principles so you can skip reading those 50-page court decisions'
+      description: 'Search over 20,000 cases and statutes with easy-to-understand summaries so you can skip reading those boring 50-paged court decisions.',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Cases+and+Statutes'
     },
     {
-      icon: '📸',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+        </svg>
+      ),
       title: 'Picture to Note, Flashcards and Quizzes',
-      description: 'Take a photo of your handwritten notes and Lawexa converts them into a full study note with relevant legal authorities, Flashcard or Quiz to test your knowledge'
+      description: 'Take a photo of your handwritten notes and Lawexa converts them into a full study note with relevant legal authorities, Flashcard or Quiz to test your knowledge.',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Flashcards+%26+Quizzes'
     },
     {
-      icon: '📂',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
       title: 'Trending and Recommended Folders',
-      description: 'See what your classmates are studying and stay ahead of the curve by catching up on important topics you might have missed in our curated exam-ready folders'
+      description: 'See what your classmates are studying and stay ahead of the curve by catching up on important topics you might have missed in our curated exam-ready folders',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Trending+Folders'
     }
   ];
 
   const legalFeatures = [
     {
-      icon: '⭐',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M17 16h.01" />
+        </svg>
+      ),
       title: 'AI Legal Assistant',
-      description: 'Skip confusing jargon and get straightforward answers on any legal question, with clear step by step legal guidance you can follow'
+      description: 'Skip confusing jargon and get straightforward answers on any legal question, with clear step-by-step legal guidance you can follow',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=AI+Legal+Assistant'
     },
     {
-      icon: '📄',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
       title: 'Legal Clause Explainer and Risk Assessment',
-      description: 'Upload any contract and get instant clause explanations along hidden risks or unfavourable terms, before signing any document. Protect yourself from costly surprises'
+      description: 'Upload any contract and get instant clause explanation, detect hidden risks or unfavourable terms, before signing any document. Protect yourself from costly surprises',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Legal+Clause+Explainer'
     },
     {
-      icon: '🤝',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
       title: 'Automated Lawyer Connect',
-      description: 'Get automatically matched with qualified lawyers near you within your budget, and with the right expertise for your specific legal needs'
+      description: 'Get automatically matched with qualified lawyers near you, within your budget, and with the right expertise for your specific legal needs.',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Automated+Lawyer+Connect'
     },
     {
-      icon: '📣',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4l-2 14h14l-2-14M11 9v4M13 9v4" />
+        </svg>
+      ),
       title: 'Legal Pulse (Social Commentary)',
-      description: 'Stay informed with legal insights on trending news and social issues. Understand the legal implications of current events and viral topics'
+      description: 'Stay informed with legal insights on trending news and social issues. Understand the legal implications of current events and viral topics.',
+      image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Legal+Pulse'
     }
+  ];
+
+  const comparisonData = [
+    { feature: 'AI Legal Tutor', lawexa: true, aiLegalCo: false, lawMate: true, legalBot: false },
+    { feature: 'Cases & Statutes Library', lawexa: true, aiLegalCo: true, lawMate: false, legalBot: false },
+    { feature: 'Picture to Note', lawexa: true, aiLegalCo: false, lawMate: false, legalBot: true },
+    { feature: 'Trending Folders', lawexa: true, aiLegalCo: false, lawMate: false, legalBot: false },
+    { feature: 'AI Legal Assistant', lawexa: true, aiLegalCo: true, lawMate: true, legalBot: true },
+    { feature: 'Clause Explainer', lawexa: true, aiLegalCo: true, lawMate: false, legalBot: false },
+    { feature: 'Automated Lawyer Connect', lawexa: true, aiLegalCo: false, lawMate: false, legalBot: false },
+    { feature: 'Legal Pulse', lawexa: true, aiLegalCo: true, lawMate: false, legalBot: true },
+    { feature: '24/7 Support', lawexa: true, aiLegalCo: true, lawMate: true, legalBot: false }
   ];
 
   const currentFeatures = activeTab === 'study' ? studyFeatures : legalFeatures;
 
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab);
+    setActiveFeature(0);
+    setShowComparison(false);
+  };
+
+  const handleFeatureHover = (index: number) => {
+    setActiveFeature(index);
+  };
+
+  if (showComparison) {
+    return (
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8">
+              Lawexa vs. The Rest
+            </h2>
+            <Button 
+              onClick={() => setShowComparison(false)}
+              variant="outline"
+              className="mb-8"
+            >
+              ← Back to Features
+            </Button>
+          </div>
+
+          <div className="overflow-x-auto rounded-lg shadow-large border border-border bg-card">
+            <table className="min-w-full divide-y divide-border">
+              <thead className="bg-muted">
+                <tr>
+                  <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">Feature</th>
+                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">Lawexa</th>
+                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">AI Legal Co.</th>
+                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">LawMate</th>
+                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">Legal-Bot</th>
+                </tr>
+              </thead>
+              <tbody className="bg-card divide-y divide-border">
+                {comparisonData.map((item, index) => (
+                  <tr key={index} className="hover:bg-muted/50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground">{item.feature}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
+                      {item.lawexa ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
+                      {item.aiLegalCo ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
+                      {item.lawMate ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
+                      {item.legalBot ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        {/* Header and Tabs */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-8">
             The All-In-One Platform
-          </h2>
+          </h1>
           
-          {/* Tab Pills */}
-          <div className="flex justify-center items-center space-x-4 mb-12">
+          <div className="flex items-center justify-center space-x-2 p-1 bg-muted rounded-full mb-12 shadow-soft inline-flex">
             <button
-              onClick={() => setActiveTab('study')}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              onClick={() => handleTabChange('study')}
+              className={`px-6 py-2 text-sm md:text-base font-medium rounded-full transition-all duration-300 transform ${
                 activeTab === 'study'
-                  ? 'bg-primary text-primary-foreground shadow-gold'
-                  : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                  ? 'bg-primary text-primary-foreground scale-105'
+                  : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:scale-102'
               }`}
             >
               For Study
             </button>
             <button
-              onClick={() => setActiveTab('legal')}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+              onClick={() => handleTabChange('legal')}
+              className={`px-6 py-2 text-sm md:text-base font-medium rounded-full transition-all duration-300 transform ${
                 activeTab === 'legal'
-                  ? 'bg-primary text-primary-foreground shadow-gold'
-                  : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
+                  ? 'bg-primary text-primary-foreground scale-105'
+                  : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:scale-102'
               }`}
             >
               For Legal Help
@@ -85,51 +203,79 @@ const PlatformSection = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          {/* Platform Mockup */}
-          <div className="lg:col-span-1 hidden lg:block">
-            <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 shadow-large">
-              <div className="bg-white rounded-xl p-6 mb-4">
-                <div className="text-2xl font-bold text-primary mb-2">We've Made</div>
-                <div className="text-2xl font-bold text-foreground">Law Easy</div>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-primary text-primary-foreground p-4 rounded-lg text-center">
-                  <div className="font-semibold">Cases</div>
-                  <div className="text-sm opacity-90">20k+</div>
+        {/* Content Section */}
+        <div className="flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto transition-opacity duration-300">
+          {/* Features List */}
+          <div className="w-full lg:w-1/2 p-4 lg:p-8">
+            <div className="space-y-4">
+              {currentFeatures.map((feature, index) => (
+                <div
+                  key={feature.title}
+                  className={`p-6 rounded-xl border cursor-pointer transition-all duration-300 transform-gpu ${
+                    index === activeFeature
+                      ? 'bg-primary/5 border-primary/20 shadow-soft translate-y-[-2px]'
+                      : 'bg-card border-border hover:bg-muted/50 hover:translate-y-[-2px] hover:shadow-soft'
+                  }`}
+                  onMouseEnter={() => handleFeatureHover(index)}
+                  onClick={() => handleFeatureHover(index)}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="flex-shrink-0">
+                      {feature.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-foreground mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white p-4 rounded-lg text-center">
-                  <div className="font-semibold text-foreground">AI Tutor</div>
-                  <div className="text-sm text-muted-foreground">24/7</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-6">
-            {currentFeatures.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="bg-white rounded-xl p-6 shadow-soft card-hover"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+          {/* Laptop Mockup */}
+          <div className="w-full lg:w-1/2 p-4 lg:p-8 flex items-center justify-center relative">
+            <img 
+              src="https://placehold.co/800x600/1a1a1a/666?text=Laptop+Frame" 
+              alt="Laptop Frame" 
+              className="w-full h-auto rounded-lg shadow-large" 
+            />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[52%] w-[70%] h-[60%] overflow-hidden rounded-lg shadow-soft">
+              <div 
+                className="w-full h-full bg-cover bg-center transition-all duration-400 ease-in-out"
+                style={{ 
+                  backgroundImage: `url('${currentFeatures[activeFeature]?.image}')`,
+                  transform: 'scale(1)',
+                  opacity: 1
+                }}
+              />
+            </div>
           </div>
         </div>
 
         {/* CTA Button */}
         <div className="text-center mt-12">
-          <Button className="btn-dark text-lg px-8 py-4">
-            {activeTab === 'study' ? 'Try Lawexa Student Free >' : 'Get Legal Help Now - Free >'}
+          <Button className="btn-dark text-lg px-8 py-4 mb-8">
+            {activeTab === 'study' ? 'Try Lawexa Student free >' : 'Try Lawexa Legal free >'}
+          </Button>
+        </div>
+
+        {/* Comparison Section */}
+        <div className="text-center mt-24">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            See how Lawexa stacks up.
+          </h2>
+          <Button 
+            onClick={() => setShowComparison(true)}
+            variant="outline"
+            className="px-8 py-4 font-semibold"
+          >
+            Compare Our Features
+            <span className="ml-2 font-light text-muted-foreground">&gt;</span>
           </Button>
         </div>
       </div>
