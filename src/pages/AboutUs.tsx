@@ -2,69 +2,54 @@ import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Users, Target, Globe, Award, Heart, Lightbulb } from 'lucide-react';
-
 const AboutUs = () => {
   useEffect(() => {
     document.title = 'About Us - Lawexa | Legal Intelligence for Africa';
   }, []);
-
-  const values = [
-    {
-      icon: Heart,
-      title: 'Accessibility',
-      description: 'Making legal knowledge accessible to every Nigerian, regardless of their background or economic status.'
-    },
-    {
-      icon: Lightbulb,
-      title: 'Innovation',
-      description: 'Leveraging cutting-edge AI technology to solve real legal challenges faced by Africans.'
-    },
-    {
-      icon: Target,
-      title: 'Excellence',
-      description: 'Delivering the highest quality legal intelligence with accuracy and reliability you can trust.'
-    },
-    {
-      icon: Globe,
-      title: 'Impact',
-      description: 'Creating meaningful change in how legal services are accessed and delivered across Africa.'
-    }
-  ];
-
-  const team = [
-    {
-      name: 'Adebayo Ogundimu',
-      role: 'CEO & Co-Founder',
-      description: 'Former corporate lawyer with 8+ years experience. LLB from University of Lagos, LLM from Harvard Law School.',
-      image: 'https://placehold.co/300x300/374151/FFD700?text=AO'
-    },
-    {
-      name: 'Kemi Adeyemi',
-      role: 'CTO & Co-Founder',
-      description: 'AI Engineer and legal tech pioneer. Former Google AI researcher with expertise in NLP and machine learning.',
-      image: 'https://placehold.co/300x300/374151/FFD700?text=KA'
-    },
-    {
-      name: 'Chioma Okwu',
-      role: 'Head of Legal Research',
-      description: 'Senior Advocate of Nigeria with 12+ years in commercial law. PhD in Constitutional Law from Oxford.',
-      image: 'https://placehold.co/300x300/374151/FFD700?text=CO'
-    },
-    {
-      name: 'Tunde Alabi',
-      role: 'Head of Product',
-      description: 'Product strategist with experience building fintech solutions for African markets. MBA from INSEAD.',
-      image: 'https://placehold.co/300x300/374151/FFD700?text=TA'
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const values = [{
+    icon: Heart,
+    title: 'Accessibility',
+    description: 'Making legal knowledge accessible to every Nigerian, regardless of their background or economic status.'
+  }, {
+    icon: Lightbulb,
+    title: 'Innovation',
+    description: 'Leveraging cutting-edge AI technology to solve real legal challenges faced by Africans.'
+  }, {
+    icon: Target,
+    title: 'Excellence',
+    description: 'Delivering the highest quality legal intelligence with accuracy and reliability you can trust.'
+  }, {
+    icon: Globe,
+    title: 'Impact',
+    description: 'Creating meaningful change in how legal services are accessed and delivered across Africa.'
+  }];
+  const team = [{
+    name: 'Adebayo Ogundimu',
+    role: 'CEO & Co-Founder',
+    description: 'Former corporate lawyer with 8+ years experience. LLB from University of Lagos, LLM from Harvard Law School.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=AO'
+  }, {
+    name: 'Kemi Adeyemi',
+    role: 'CTO & Co-Founder',
+    description: 'AI Engineer and legal tech pioneer. Former Google AI researcher with expertise in NLP and machine learning.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=KA'
+  }, {
+    name: 'Chioma Okwu',
+    role: 'Head of Legal Research',
+    description: 'Senior Advocate of Nigeria with 12+ years in commercial law. PhD in Constitutional Law from Oxford.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=CO'
+  }, {
+    name: 'Tunde Alabi',
+    role: 'Head of Product',
+    description: 'Product strategist with experience building fintech solutions for African markets. MBA from INSEAD.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=TA'
+  }];
+  return <div className="min-h-screen bg-background">
       <Header />
       
       <main>
         {/* Hero Section */}
-        <section className="bg-lawexa-dark text-white py-20">
+        <section className="bg-lawexa-dark text-white py-20 bg-slate-950">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -115,8 +100,8 @@ const AboutUs = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="text-center">
-                <div className="w-20 h-20 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Target className="w-10 h-10 text-black" />
+                <div className="w-20 h-20 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-6 bg-slate-50">
+                  <Target className="w-10 h-10 text-black bg-slate-50" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
                 <p className="text-lg text-gray-600">
@@ -147,17 +132,15 @@ const AboutUs = () => {
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {values.map((value, index) => {
-                const IconComponent = value.icon;
-                return (
-                  <div key={index} className="text-center group">
+              const IconComponent = value.icon;
+              return <div key={index} className="text-center group">
                     <div className="w-16 h-16 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-8 h-8 text-black" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-foreground">{value.title}</h3>
                     <p className="text-gray-600">{value.description}</p>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
         </section>
@@ -169,26 +152,20 @@ const AboutUs = () => {
               Meet Our Team
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              {team.map((member, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-medium hover:shadow-large transition-shadow duration-300">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-                  />
+              {team.map((member, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-medium hover:shadow-large transition-shadow duration-300">
+                  <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                   <div className="text-center">
                     <h3 className="text-xl font-bold mb-1 text-foreground">{member.name}</h3>
                     <p className="text-lawexa-gold font-semibold mb-3">{member.role}</p>
                     <p className="text-sm text-gray-600">{member.description}</p>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
 
         {/* Impact Section */}
-        <section className="py-20 bg-lawexa-dark text-white">
+        <section className="py-20 bg-lawexa-dark text-white bg-slate-950">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
               Our Impact
@@ -228,8 +205,6 @@ const AboutUs = () => {
       </main>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AboutUs;
