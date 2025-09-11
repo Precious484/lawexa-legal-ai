@@ -7,6 +7,11 @@ import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Blog from "./pages/Blog";
 import Products from "./pages/Products";
+import StudentProduct from "./pages/StudentProduct";
+import AssistantProduct from "./pages/AssistantProduct";
+import ApiProduct from "./pages/ApiProduct";
+import PricingPage from "./pages/PricingPage";
+import FeaturesPage from "./pages/FeaturesPage";
 import Compare from "./pages/Compare";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +28,11 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/student" element={<StudentProduct />} />
+          <Route path="/products/assistant" element={<AssistantProduct />} />
+          <Route path="/products/api" element={<ApiProduct />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/features" element={<FeaturesPage />} />
           <Route path="/compare" element={<Compare />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

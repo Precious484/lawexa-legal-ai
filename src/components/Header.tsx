@@ -14,16 +14,17 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   const navLinks = [
+    { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Blog', href: '/blog' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Features', href: '#features' }
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Features', href: '/features' }
   ];
 
   const productLinks = [
-    { name: 'Lawexa Student', href: '/products#student' },
-    { name: 'Lawexa Assistant', href: '/products#assistant' },
-    { name: 'Lawexa API', href: '/products#api' }
+    { name: 'Lawexa Student', href: '/products/student' },
+    { name: 'Lawexa Assistant', href: '/products/assistant' },
+    { name: 'Lawexa API', href: '/products/api' }
   ];
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-medium' : 'bg-white/95 backdrop-blur-sm'}`}>
       <div className="container mx-auto px-4">
