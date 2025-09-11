@@ -173,11 +173,9 @@ const PricingSection = () => {
                   
                   {/* Price */}
                   <div className="mb-2">
-                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && (
-                      <div className="text-sm text-muted-foreground line-through text-center mb-1">
+                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <div className="text-sm text-muted-foreground line-through text-center mb-1">
                         {plan.originalPrices[selectedPeriod]}
-                      </div>
-                    )}
+                      </div>}
                     <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-foreground break-words">
                       {plan.prices[selectedPeriod]}
                     </div>
@@ -232,9 +230,7 @@ const PricingSection = () => {
                 </div>
 
                 {/* Bottom Text */}
-                {plan.bottomText && <p className="text-xs text-center text-muted-foreground mt-2">
-                    {plan.bottomText}
-                  </p>}
+                {plan.bottomText}
               </div>;
         })}
         </div>
