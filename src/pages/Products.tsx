@@ -47,21 +47,21 @@ const Products = () => {
     },
     {
       icon: Users,
-      name: 'Lawexa Corporate',
-      tagline: 'Enterprise Legal Intelligence',
-      description: 'Scale your legal operations with enterprise-grade AI tools designed for teams and organizations.',
+      name: 'Lawexa API',
+      tagline: 'Developer-First Legal Intelligence',
+      description: 'Integrate powerful legal AI capabilities directly into your applications with our robust API platform.',
       features: [
-        'Multi-user team workspace',
-        'Shared document libraries and templates',
-        'Advanced analytics and reporting',
-        'Custom integrations via API',
-        'Dedicated account manager',
-        'Team training and onboarding'
+        'RESTful API with comprehensive documentation',
+        'Real-time legal query processing',
+        'Webhook support for automated workflows',
+        'Enterprise-grade security and authentication',
+        'Scalable infrastructure with 99.9% uptime',
+        'Developer support and onboarding'
       ],
-      pricing: 'Starting at ₦100,000/month',
-      cta: 'Contact Sales',
+      pricing: 'Starting at ₦75,000/month',
+      cta: 'View API Docs',
       color: 'from-green-600 to-green-800',
-      image: 'https://placehold.co/600x400/374151/FFD700?text=Corporate+Solution'
+      image: 'https://placehold.co/600x400/374151/FFD700?text=API+Platform'
     }
   ];
 
@@ -144,7 +144,7 @@ const Products = () => {
                 const isEven = index % 2 === 0;
                 
                 return (
-                  <div key={index} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+                  <div key={index} id={product.name.toLowerCase().replace('lawexa ', '')} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
                     {/* Content */}
                     <div className="lg:w-1/2">
                       <div className="flex items-center gap-4 mb-6">

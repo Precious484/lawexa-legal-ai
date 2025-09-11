@@ -270,7 +270,7 @@ const PlatformSection = () => {
             See how Lawexa stacks up.
           </h2>
           <Button 
-            onClick={() => window.open('/compare', '_blank')}
+            onClick={() => window.open('/products', '_blank')}
             variant="outline"
             className="px-8 py-4 font-semibold"
           >
