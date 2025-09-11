@@ -172,11 +172,15 @@ const PricingSection = () => {
                   </p>
                   
                   {/* Price */}
-                  <div className="text-5xl font-extrabold text-center mb-2 bg-slate-900">
-                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <span className="text-sm text-gray-500 line-through mr-2">
+                  <div className="mb-2">
+                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && (
+                      <div className="text-sm text-muted-foreground line-through text-center mb-1">
                         {plan.originalPrices[selectedPeriod]}
-                      </span>}
-                    {plan.prices[selectedPeriod]}
+                      </div>
+                    )}
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-foreground break-words">
+                      {plan.prices[selectedPeriod]}
+                    </div>
                   </div>
                   <p className="text-sm text-muted-foreground mb-6">
                     {plan.period[selectedPeriod]}
