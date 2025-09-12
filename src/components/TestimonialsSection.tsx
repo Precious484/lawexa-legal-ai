@@ -63,9 +63,49 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">15,000+ Active Users</h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-xl text-muted-foreground mb-8">
             Across 130+ Universities
           </p>
+          
+          {/* University Carousel */}
+          <div className="w-full overflow-hidden py-6">
+            <div className="relative">
+              <div className="flex space-x-8 logo-carousel">
+                {[
+                  { name: 'University of Lagos', logo: '🏛️' },
+                  { name: 'Babcock University', logo: '🎓' },
+                  { name: 'Covenant University', logo: '📚' },
+                  { name: 'University of Ibadan', logo: '🏛️' },
+                  { name: 'Ahmadu Bello University', logo: '🎓' },
+                  { name: 'University of Nigeria', logo: '📚' },
+                  { name: 'Lagos State University', logo: '🏛️' },
+                  { name: 'Obafemi Awolowo University', logo: '🎓' },
+                  { name: 'University of Lagos', logo: '🏛️' },
+                  { name: 'Babcock University', logo: '🎓' },
+                  { name: 'Covenant University', logo: '📚' },
+                  { name: 'University of Ibadan', logo: '🏛️' },
+                  { name: 'Ahmadu Bello University', logo: '🎓' },
+                  { name: 'University of Nigeria', logo: '📚' },
+                  { name: 'Lagos State University', logo: '🏛️' },
+                  { name: 'Obafemi Awolowo University', logo: '🎓' },
+                ].map((logo, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 flex items-center space-x-3 px-6 py-3 bg-background/50 backdrop-blur-sm rounded-lg border border-border/50"
+                  >
+                    <span className="text-2xl">{logo.logo}</span>
+                    <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                      {logo.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Gradient overlays for smooth fade effect */}
+              <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-slate-50 to-transparent pointer-events-none" />
+              <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none" />
+            </div>
+          </div>
         </div>
 
         {/* Testimonials Carousel */}
