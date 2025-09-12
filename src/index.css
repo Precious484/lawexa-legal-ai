@@ -7,10 +7,11 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --lawexa-gold: 51 100% 50%;
+    --lawexa-gold: 45 95% 68%; /* #F5CB68 */
     --lawexa-dark: 0 0% 10%;
     --lawexa-light: 0 0% 96%;
     --lawexa-brown-glow: 24 29% 23%;
+    --lawexa-green: 142 76% 36%; /* Green for savings */
     
     /* System Colors */
     --background: 0 0% 100%;
@@ -21,7 +22,7 @@
     --popover-foreground: 0 0% 10%;
     
     /* Primary - Lawexa Gold */
-    --primary: 51 100% 50%;
+    --primary: 45 95% 68%; /* #F5CB68 */
     --primary-foreground: 0 0% 10%;
     
     /* Secondary - Clean neutrals */
@@ -31,7 +32,7 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
     
-    --accent: 51 100% 50%;
+    --accent: 45 95% 68%; /* #F5CB68 */
     --accent-foreground: 0 0% 10%;
     
     --destructive: 0 84% 60%;
@@ -39,7 +40,7 @@
     
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 51 100% 50%;
+    --ring: 45 95% 68%; /* #F5CB68 */
     
     /* Design Tokens */
     --radius: 0.75rem;
@@ -47,7 +48,7 @@
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--lawexa-dark)), hsl(var(--lawexa-dark)));
     --gradient-glow: radial-gradient(circle, hsl(var(--lawexa-brown-glow) / 0.3), transparent);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--lawexa-gold)), hsl(51 100% 60%));
+    --gradient-gold: linear-gradient(135deg, hsl(var(--lawexa-gold)), hsl(45 95% 75%));
     
     /* Shadows */
     --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
@@ -186,6 +187,20 @@
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Logo Carousel Animations */
+  @keyframes scroll-logos {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  
+  .logo-carousel {
+    animation: scroll-logos 30s linear infinite;
+  }
+  
+  .logo-carousel:hover {
+    animation-play-state: paused;
   }
   
   /* Typewriter Effect */

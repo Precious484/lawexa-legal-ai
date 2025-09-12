@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import TrustedLogos from '@/components/TrustedLogos';
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,19 +53,14 @@ const HeroSection = () => {
 No Law Degree Required</p>
 
           {/* CTA Button */}
-          <Button className="btn-gold text-lg px-8 py-4 mb-12">
-            Try For Free
-          </Button>
+          <Link to="/signup">
+            <Button className="btn-gold text-lg px-8 py-4 mb-12">
+              Try For Free
+            </Button>
+          </Link>
 
           {/* Trusted By Section */}
-          <div className="flex items-center justify-center space-x-4">
-            <div className="flex -space-x-2">
-              {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-10 h-10 rounded-full border-2 border-white bg-white" />)}
-            </div>
-            <p className="text-gray-300">
-              Trusted by <span className="text-white font-semibold">15,000+</span> students, professionals, and everyday users
-            </p>
-          </div>
+          <TrustedLogos />
         </div>
       </div>
     </section>;

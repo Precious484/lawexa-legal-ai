@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const PlatformSection = () => {
   const [activeTab, setActiveTab] = useState('study');
@@ -269,14 +270,15 @@ const PlatformSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             See how Lawexa stacks up.
           </h2>
-          <Button 
-            onClick={() => window.open('/products', '_blank')}
-            variant="outline"
-            className="px-8 py-4 font-semibold"
-          >
-            Compare Our Features
-            <span className="ml-2 font-light text-muted-foreground">&gt;</span>
-          </Button>
+          <Link to="/products" target="_blank">
+            <Button 
+              variant="outline"
+              className="px-8 py-4 font-semibold"
+            >
+              Compare Our Features
+              <span className="ml-2 font-light text-muted-foreground">&gt;</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
