@@ -89,11 +89,9 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            <RollingNumber value={15000} formatNumber={(num) => `${num.toLocaleString()}+`} /> Active Users
+            <RollingNumber value={15000} formatNumber={num => `${num.toLocaleString()}+`} /> Active Users
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Across <RollingNumber value={130} formatNumber={(num) => `${num}+`} /> Universities
-          </p>
+          
           
           {/* University Carousel */}
           <UniversityCarousel />
