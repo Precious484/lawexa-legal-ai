@@ -54,8 +54,13 @@ const AboutUs = () => {
         <section className="bg-lawexa-dark text-white py-20 bg-slate-950">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              
-              
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                Built By Lawyers. 
+                
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8">
+                Designed For Africa.
+              </p>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 We're on a mission to democratize legal knowledge across Africa, making professional legal intelligence accessible to students, professionals, and everyday people who deserve better access to justice.
               </p>
@@ -77,12 +82,14 @@ const AboutUs = () => {
                   experienced firsthand the barriers that prevent ordinary Nigerians from understanding 
                   their legal rights and obligations.
                 </p>
-                <p className="text-xl leading-relaxed mb-6">
-                  In 2023, we set out to change this narrative. We combined our deep understanding of 
-                  Nigerian law with cutting-edge artificial intelligence to create a platform that could 
-                  provide instant, accurate legal guidance to anyone with a smartphone.
+                <p className="text-xl leading-relaxed mb-6">Today, Lawexa serves over 15,000 users, saving them millions of naira in legal fees while empowering them with the knowledge they need to make informed decisions. 
+     
+We're on a mission to democratize legal knowledge across Africa, making professional legal intelligence accessible to students, professionals, and everyday people who deserve better access to justice.</p>
+                <p className="text-xl leading-relaxed">
+                  Today, Lawexa serves over 15,000 users across 130+ universities and countless 
+                  professionals, saving them millions of naira in legal fees while empowering them 
+                  with the knowledge they need to make informed decisions.
                 </p>
-                <p className="text-xl leading-relaxed">Today, Lawexa serves over 15,000 users, saving them millions of naira in legal fees while empowering them with the knowledge they need to make informed decisions.</p>
               </div>
             </div>
           </div>
@@ -97,7 +104,11 @@ const AboutUs = () => {
                   <Target className="w-10 h-10 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
-                <p className="text-lg text-gray-600">To democratize legal knowledge across Africa by providing AI-powered legal intelligence that is accessible, affordable, and accurate for everyone, from law students to everyday citizens.</p>
+                <p className="text-lg text-gray-600">
+                  To democratize legal knowledge across Africa by providing AI-powered legal intelligence 
+                  that is accessible, affordable, and accurate for everyone—from law students to 
+                  everyday citizens.
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
