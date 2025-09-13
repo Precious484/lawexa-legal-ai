@@ -4,6 +4,7 @@ const UniversityCarousel = () => {
   const [currentOffset, setCurrentOffset] = useState(0);
 
   const universities = [
+    // Nigeria
     'University of Lagos',
     'University of Ibadan',
     'Ahmadu Bello University',
@@ -23,7 +24,34 @@ const UniversityCarousel = () => {
     'Nnamdi Azikiwe University',
     'University of Calabar',
     'Bayero University',
-    'University of Maiduguri'
+    'University of Maiduguri',
+    // Ghana
+    'University of Ghana',
+    'Kwame Nkrumah University',
+    'University of Cape Coast',
+    'Ashesi University',
+    'Ghana Institute of Management',
+    // UK
+    'University of Oxford',
+    'University of Cambridge',
+    'Harvard University',
+    'London School of Economics',
+    'King\'s College London',
+    'University of Edinburgh',
+    'University of Manchester',
+    // India
+    'University of Delhi',
+    'Jawaharlal Nehru University',
+    'Indian Institute of Technology',
+    'Bangalore University',
+    'Mumbai University',
+    // US
+    'Stanford University',
+    'Yale University',
+    'Columbia University',
+    'University of Chicago',
+    'New York University',
+    'University of California'
   ];
 
   // Duplicate the array for seamless infinite scroll
@@ -32,14 +60,14 @@ const UniversityCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentOffset(prev => {
-        const newOffset = prev - 1;
+        const newOffset = prev - 0.1;
         // Reset when we've scrolled through the first set
         if (newOffset <= -50) {
           return 0;
         }
         return newOffset;
       });
-    }, 50); // Smooth, slow movement
+    }, 80); // Slower, smoother movement
 
     return () => clearInterval(interval);
   }, []);

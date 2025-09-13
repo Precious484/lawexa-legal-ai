@@ -9,7 +9,7 @@ interface RollingNumberProps {
 
 const RollingNumber = ({ 
   value, 
-  duration = 2000, 
+  duration = 4000, 
   formatNumber = (num) => num.toLocaleString(),
   className = ""
 }: RollingNumberProps) => {

@@ -273,4 +273,18 @@
     transform: translateY(-4px);
     box-shadow: var(--shadow-large);
   }
+
+  /* Animation utilities */
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-large hover:-translate-y-1;
+  }
+
+  /* Button styles */
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary hover:text-white transition-all duration-300;
+  }
 }

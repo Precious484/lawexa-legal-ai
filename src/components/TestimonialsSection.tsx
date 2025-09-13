@@ -28,6 +28,30 @@ const TestimonialsSection = () => {
     title: "Business Owner",
     type: "Professional",
     avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anonymous"
+  }, {
+    quote: "As a final year student, Lawexa has been my secret weapon. The AI explains complex cases in simple terms and helps me understand legal principles better",
+    name: "Adaora Okwu",
+    title: "Student, 500L University of Nigeria",
+    type: "Student",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Adaora"
+  }, {
+    quote: "The contract analysis feature is phenomenal. It caught clauses in my partnership agreement that could have cost me millions",
+    name: "David Chen",
+    title: "Tech Entrepreneur",
+    type: "Professional",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=David"
+  }, {
+    quote: "Lawexa's case database is incredible. I can find relevant precedents in seconds instead of hours of research",
+    name: "Barrister Amina Hassan",
+    title: "Senior Advocate, Supreme Court",
+    type: "Lawyer",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Amina"
+  }, {
+    quote: "The AI tutor feature is like having a personal professor available 24/7. It's transformed how I study for my bar exams",
+    name: "Michael Oduya",
+    title: "Law School Graduate",
+    type: "Student",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael"
   }];
   useEffect(() => {
     const interval = setInterval(() => {

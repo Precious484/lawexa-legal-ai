@@ -38,33 +38,39 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map(link => (
-              <Link key={link.name} to={link.href} className="text-foreground hover:text-primary transition-colors duration-200">
+              <Link 
+                key={link.name} 
+                to={link.href} 
+                className="text-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
+              >
                 {link.name}
               </Link>
             ))}
             
            {/* Products Dropdown */}
-            <div className="relative group">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsProductsOpen(true)}
+              onMouseLeave={() => setIsProductsOpen(false)}
+            >
               <button 
-                className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-200"
-                onMouseEnter={() => setIsProductsOpen(true)}
-                onMouseLeave={() => setIsProductsOpen(false)}
+                className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-300"
               >
                 Products <ChevronDown className="w-4 h-4" />
               </button>
               
               {isProductsOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-48 bg-white border border-border rounded-lg shadow-large z-50"
-                  onMouseEnter={() => setIsProductsOpen(true)}
-                  onMouseLeave={() => setIsProductsOpen(false)}
-                >
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-border rounded-lg shadow-large z-50 animate-fade-in">
                   {productLinks.map(product => (
                     <Link
                       key={product.name}
-                      to={product.href}
-                      className="block px-4 py-3 text-foreground hover:bg-muted hover:text-primary transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
-                      onClick={() => setIsProductsOpen(false)}
+                      to={`/products#${product.name.toLowerCase().replace('lawexa ', '')}`}
+                      className="block px-4 py-3 text-foreground hover:bg-muted hover:text-primary transition-colors duration-300 first:rounded-t-lg last:rounded-b-lg"
+                      onClick={() => {
+                        setIsProductsOpen(false);
+                        setTimeout(() => window.scrollTo(0, 0), 100);
+                      }}
                     >
                       {product.name}
                     </Link>
@@ -102,8 +108,11 @@ const Header = () => {
                 <Link 
                   key={link.name} 
                   to={link.href} 
-                  className="text-foreground hover:text-primary transition-colors duration-200" 
-                  onClick={() => setIsMenuOpen(false)}
+                  className="text-foreground hover:text-primary transition-colors duration-300" 
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setTimeout(() => window.scrollTo(0, 0), 100);
+                  }}
                 >
                   {link.name}
                 </Link>
@@ -115,9 +124,12 @@ const Header = () => {
                 {productLinks.map(product => (
                   <Link
                     key={product.name}
-                    to={product.href}
-                    className="block py-2 text-foreground hover:text-primary transition-colors duration-200"
-                    onClick={() => setIsMenuOpen(false)}
+                    to={`/products#${product.name.toLowerCase().replace('lawexa ', '')}`}
+                    className="block py-2 text-foreground hover:text-primary transition-colors duration-300"
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      setTimeout(() => window.scrollTo(0, 0), 100);
+                    }}
                   >
                     {product.name}
                   </Link>

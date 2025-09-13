@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { BookOpen, MessageCircle, Scale, Users, Smartphone, Globe, ArrowRight, Check } from 'lucide-react';
+import RollingNumber from '@/components/RollingNumber';
+import { BookOpen, MessageCircle, Scale, Users, Smartphone, Globe, ArrowRight, Check, Zap, Shield, Clock, Star, Code, FileText, Search, Users2, Lightbulb, Target } from 'lucide-react';
 
 const Products = () => {
   useEffect(() => {
-    document.title = 'Products - Lawexa | AI-Powered Legal Solutions';
+    document.title = 'Products & Features - Lawexa | AI-Powered Legal Solutions';
+    window.scrollTo(0, 0);
   }, []);
 
   const products = [
@@ -87,10 +89,67 @@ const Products = () => {
   ];
 
   const stats = [
-    { number: '20,000+', label: 'Legal Cases' },
-    { number: '130+', label: 'Universities' },
-    { number: '15,000+', label: 'Active Users' },
-    { number: '24/7', label: 'AI Support' }
+    { number: 20000, label: 'Legal Cases', suffix: '+' },
+    { number: 130, label: 'Universities', suffix: '+' },
+    { number: 15000, label: 'Active Users', suffix: '+' },
+    { number: 24, label: 'Hour AI Support', suffix: '/7' }
+  ];
+
+  const features = [
+    {
+      category: "For Students",
+      icon: BookOpen,
+      color: "from-blue-500 to-blue-700",
+      items: [
+        {
+          icon: Search,
+          title: "AI-Powered Case Search",
+          description: "Find relevant legal cases instantly with our intelligent search engine"
+        },
+        {
+          icon: FileText,
+          title: "Smart Note Generation",
+          description: "Convert pictures to organized legal notes with authorities and citations"
+        },
+        {
+          icon: Target,
+          title: "Exam Preparation",
+          description: "Practice with past questions and get personalized study recommendations"
+        },
+        {
+          icon: Lightbulb,
+          title: "AI Tutor",
+          description: "Get instant explanations for complex legal concepts and principles"
+        }
+      ]
+    },
+    {
+      category: "For Professionals",
+      icon: Users2,
+      color: "from-purple-500 to-purple-700",
+      items: [
+        {
+          icon: Shield,
+          title: "Contract Analysis",
+          description: "Comprehensive risk assessment and clause-by-clause review"
+        },
+        {
+          icon: Clock,
+          title: "24/7 Legal Assistant",
+          description: "Get instant legal guidance without waiting for lawyer appointments"
+        },
+        {
+          icon: Code,
+          title: "API Integration",
+          description: "Integrate legal intelligence directly into your business workflows"
+        },
+        {
+          icon: Star,
+          title: "Expert Matching",
+          description: "Connect with specialized lawyers for complex legal matters"
+        }
+      ]
+    }
   ];
 
   return (
@@ -99,18 +158,18 @@ const Products = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-lawexa-dark text-white py-20">
+        <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                AI-Powered Legal Solutions
-                <span className="text-lawexa-gold"> For Everyone</span>
+                All-in-One Platform
+                <span className="text-accent block mt-2">Legal Intelligence</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8">
-                From law students to corporate teams, discover the perfect Lawexa solution for your legal intelligence needs.
+              <p className="text-xl md:text-2xl text-white/90 mb-8">
+                Discover Lawexa's comprehensive suite of AI-powered legal tools designed for students, professionals, and businesses.
               </p>
-              <button className="bg-lawexa-gold text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-lawexa-gold/90 hover:scale-105 transition-all duration-300">
-                Explore All Products
+              <button className="btn-gold text-lg px-8 py-4 hover-scale">
+                Explore All Features
               </button>
             </div>
           </div>
@@ -121,19 +180,75 @@ const Products = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
               {stats.map((stat, index) => (
-                <div key={index}>
-                  <div className="text-3xl md:text-4xl font-bold text-lawexa-gold mb-2">
-                    {stat.number}
+                <div key={index} className="animate-fade-in">
+                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                    <RollingNumber 
+                      value={stat.number} 
+                      formatNumber={(num) => `${num.toLocaleString()}${stat.suffix}`} 
+                    />
                   </div>
-                  <p className="text-gray-600">{stat.label}</p>
+                  <p className="text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Features Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+                Powerful Features
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Lawexa's AI-powered platform offers specialized tools for every legal need, from student research to professional contract analysis.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+              {features.map((category, index) => {
+                const CategoryIcon = category.icon;
+                return (
+                  <div key={index} className="animate-fade-in">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
+                        <CategoryIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground">{category.category}</h3>
+                    </div>
+                    
+                    <div className="grid gap-4">
+                      {category.items.map((feature, featureIndex) => {
+                        const FeatureIcon = feature.icon;
+                        return (
+                          <div key={featureIndex} className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-soft hover:shadow-medium transition-all duration-300">
+                            <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
+                              <FeatureIcon className="w-5 h-5 text-primary" />
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-foreground mb-1">{feature.title}</h4>
+                              <p className="text-muted-foreground text-sm">{feature.description}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="text-center mt-12">
+              <button className="btn-gold hover-scale">
+                Try Lawexa Free
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Products Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-foreground">
               Our Products
@@ -144,7 +259,7 @@ const Products = () => {
                 const isEven = index % 2 === 0;
                 
                 return (
-                  <div key={index} id={product.name.toLowerCase().replace('lawexa ', '')} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
+                  <div key={index} id={product.name.toLowerCase().replace('lawexa ', '')} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 animate-fade-in`}>
                     {/* Content */}
                     <div className="lg:w-1/2">
                       <div className="flex items-center gap-4 mb-6">
@@ -153,11 +268,11 @@ const Products = () => {
                         </div>
                         <div>
                           <h3 className="text-2xl md:text-3xl font-bold text-foreground">{product.name}</h3>
-                          <p className="text-lawexa-gold font-semibold">{product.tagline}</p>
+                          <p className="text-primary font-semibold">{product.tagline}</p>
                         </div>
                       </div>
                       
-                      <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                      <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                         {product.description}
                       </p>
                       
@@ -166,18 +281,18 @@ const Products = () => {
                         <ul className="space-y-2">
                           {product.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-center gap-3">
-                              <Check className="w-5 h-5 text-lawexa-gold flex-shrink-0" />
-                              <span className="text-gray-600">{feature}</span>
+                              <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                              <span className="text-muted-foreground">{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                       
                       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                        <button className="bg-lawexa-gold text-black px-6 py-3 rounded-xl font-bold hover:bg-lawexa-gold/90 hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                        <button className="btn-gold hover-scale flex items-center gap-2">
                           {product.cta} <ArrowRight className="w-4 h-4" />
                         </button>
-                        <p className="text-gray-600 font-semibold">{product.pricing}</p>
+                        <p className="text-muted-foreground font-semibold">{product.pricing}</p>
                       </div>
                     </div>
                     
@@ -186,7 +301,7 @@ const Products = () => {
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full rounded-2xl shadow-large hover:scale-105 transition-transform duration-300"
+                        className="w-full rounded-2xl shadow-large hover-scale"
                       />
                     </div>
                   </div>
@@ -197,7 +312,7 @@ const Products = () => {
         </section>
 
         {/* Platforms Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-foreground">
               Available Everywhere
@@ -206,13 +321,13 @@ const Products = () => {
               {platforms.map((platform, index) => {
                 const IconComponent = platform.icon;
                 return (
-                  <div key={index} className="text-center p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                    <div className="w-16 h-16 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-8 h-8 text-black" />
+                  <div key={index} className="text-center p-6 bg-white rounded-2xl shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-in">
+                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-foreground">{platform.name}</h3>
-                    <p className="text-gray-600 mb-3">{platform.description}</p>
-                    <p className="text-sm text-lawexa-gold font-semibold">{platform.availability}</p>
+                    <p className="text-muted-foreground mb-3">{platform.description}</p>
+                    <p className="text-sm text-primary font-semibold">{platform.availability}</p>
                   </div>
                 );
               })}
@@ -221,27 +336,27 @@ const Products = () => {
         </section>
 
         {/* Integration Section */}
-        <section className="py-20 bg-lawexa-dark text-white">
+        <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 Seamless Integration
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-white/90 mb-8">
                 Lawexa integrates with your existing workflow and tools to provide legal intelligence exactly where you need it.
               </p>
               <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="p-6 bg-gray-800 rounded-2xl">
-                  <h3 className="text-xl font-bold mb-3 text-lawexa-gold">API Access</h3>
-                  <p className="text-gray-300">Integrate our legal AI into your applications with our robust RESTful API.</p>
+                <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl animate-fade-in">
+                  <h3 className="text-xl font-bold mb-3 text-accent">API Access</h3>
+                  <p className="text-white/90">Integrate our legal AI into your applications with our robust RESTful API.</p>
                 </div>
-                <div className="p-6 bg-gray-800 rounded-2xl">
-                  <h3 className="text-xl font-bold mb-3 text-lawexa-gold">Webhooks</h3>
-                  <p className="text-gray-300">Get real-time notifications and updates directly in your existing systems.</p>
+                <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl animate-fade-in">
+                  <h3 className="text-xl font-bold mb-3 text-accent">Webhooks</h3>
+                  <p className="text-white/90">Get real-time notifications and updates directly in your existing systems.</p>
                 </div>
-                <div className="p-6 bg-gray-800 rounded-2xl">
-                  <h3 className="text-xl font-bold mb-3 text-lawexa-gold">Single Sign-On</h3>
-                  <p className="text-gray-300">Enterprise-grade security with SSO integration for seamless access control.</p>
+                <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl animate-fade-in">
+                  <h3 className="text-xl font-bold mb-3 text-accent">Single Sign-On</h3>
+                  <p className="text-white/90">Enterprise-grade security with SSO integration for seamless access control.</p>
                 </div>
               </div>
             </div>
@@ -254,14 +369,14 @@ const Products = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
               Ready to Get Started?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Choose the Lawexa solution that fits your needs and start transforming how you work with legal information today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-lawexa-gold text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-lawexa-gold/90 hover:scale-105 transition-all duration-300">
+              <button className="btn-gold hover-scale">
                 Start Free Trial
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-bold text-lg hover:border-lawexa-gold hover:text-lawexa-gold transition-all duration-300">
+              <button className="btn-outline hover-scale">
                 Schedule Demo
               </button>
             </div>
