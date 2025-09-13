@@ -54,13 +54,8 @@ const AboutUs = () => {
         <section className="bg-lawexa-dark text-white py-20 bg-slate-950">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Built By Lawyers. 
-                <span className="text-lawexa-gold"> Powered By AI.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8">
-                Designed For Africa.
-              </p>
+              
+              
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 We're on a mission to democratize legal knowledge across Africa, making professional legal intelligence accessible to students, professionals, and everyday people who deserve better access to justice.
               </p>
@@ -87,11 +82,7 @@ const AboutUs = () => {
                   Nigerian law with cutting-edge artificial intelligence to create a platform that could 
                   provide instant, accurate legal guidance to anyone with a smartphone.
                 </p>
-                <p className="text-xl leading-relaxed">
-                  Today, Lawexa serves over 15,000 users across 130+ universities and countless 
-                  professionals, saving them millions of naira in legal fees while empowering them 
-                  with the knowledge they need to make informed decisions.
-                </p>
+                <p className="text-xl leading-relaxed">Today, Lawexa serves over 15,000 users, saving them millions of naira in legal fees while empowering them with the knowledge they need to make informed decisions.</p>
               </div>
             </div>
           </div>
@@ -106,11 +97,7 @@ const AboutUs = () => {
                   <Target className="w-10 h-10 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
-                <p className="text-lg text-gray-600">
-                  To democratize legal knowledge across Africa by providing AI-powered legal intelligence 
-                  that is accessible, affordable, and accurate for everyone—from law students to 
-                  everyday citizens.
-                </p>
+                <p className="text-lg text-gray-600">To democratize legal knowledge across Africa by providing AI-powered legal intelligence that is accessible, affordable, and accurate for everyone, from law students to everyday citizens.</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
@@ -175,19 +162,19 @@ const AboutUs = () => {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
               <div>
                 <div className="text-4xl md:text-6xl font-bold text-primary mb-2">
-                  <RollingNumber value={15000} formatNumber={(num) => `${num.toLocaleString()}+`} />
+                  <RollingNumber value={15000} formatNumber={num => `${num.toLocaleString()}+`} />
                 </div>
                 <p className="text-xl text-gray-300">Active Users</p>
               </div>
               <div>
                 <div className="text-4xl md:text-6xl font-bold text-primary mb-2">
-                  <RollingNumber value={130} formatNumber={(num) => `${num}+`} />
+                  <RollingNumber value={130} formatNumber={num => `${num}+`} />
                 </div>
                 <p className="text-xl text-gray-300">Universities Served</p>
               </div>
               <div>
                 <div className="text-4xl md:text-6xl font-bold text-primary mb-2">
-                  <RollingNumber value={50} formatNumber={(num) => `₦${num}M+`} />
+                  <RollingNumber value={50} formatNumber={num => `₦${num}M+`} />
                 </div>
                 <p className="text-xl text-gray-300">Saved in Legal Fees</p>
               </div>
