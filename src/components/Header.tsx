@@ -30,10 +30,10 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl text-primary">🏛️</span>
-            <span className="text-xl font-bold text-primary">LAWEXA</span>
-          </Link>
+          <div className="flex items-center space-x-2">
+            <span className="text-2xl text-yellow-500">🏛️</span>
+            <span className="text-xl font-bold text-yellow-500">LAWEXA</span>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -75,16 +75,12 @@ const Header = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/login">
-              <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
-                Log in
-              </Button>
-            </Link>
-            <Link to="/signup">
-              <Button className="btn-gold">
-                Sign Up
-              </Button>
-            </Link>
+            <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
+              Log in
+            </Button>
+            <Button className="btn-gold">
+              Sign Up
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,16 +120,12 @@ const Header = () => {
               </div>
               
               <div className="flex flex-col space-y-3 pt-4 border-t border-border">
-                <Link to="/login">
-                  <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white w-full">
-                    Log in
-                  </Button>
-                </Link>
-                <Link to="/signup">
-                  <Button className="btn-gold w-full">
-                    Sign Up
-                  </Button>
-                </Link>
+                <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
+                  Log in
+                </Button>
+                <Button className="btn-gold">
+                  Sign Up
+                </Button>
               </div>
             </nav>
           </div>

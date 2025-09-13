@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,11 +32,7 @@ const HeroSection = () => {
     };
     typeWord();
   }, [currentIndex, isTyping]);
-  const avatars = [
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=Happy&backgroundColor=%23F5CB68',
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=Smile&backgroundColor=%23F5CB68',
-    'https://api.dicebear.com/7.x/avataaars/svg?seed=Friendly&backgroundColor=%23F5CB68'
-  ];
+  const avatars = ['https://api.dicebear.com/7.x/avataaars/svg?seed=John', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jane', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Bob'];
   return <section className="relative min-h-screen bg-lawexa-dark hero-grid flex items-center justify-center text-white overflow-hidden pt-16 bg-[#000a0e]">
       <div className="container mx-auto px-4 text-center z-10">
         <div className="max-w-4xl mx-auto fade-in">
@@ -57,25 +51,16 @@ const HeroSection = () => {
 No Law Degree Required</p>
 
           {/* CTA Button */}
-          <Link to="/signup">
-            <Button className="btn-gold text-lg px-8 py-4 mb-12">
-              Try For Free
-            </Button>
-          </Link>
+          <Button className="btn-gold text-lg px-8 py-4 mb-12">
+            Try For Free
+          </Button>
 
           {/* Trusted By Section */}
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex items-center justify-center space-x-4">
             <div className="flex -space-x-2">
-              {avatars.map((avatar, index) => (
-                <img
-                  key={index}
-                  src={avatar}
-                  alt={`User ${index + 1}`}
-                  className="w-12 h-12 rounded-full border-2 border-white shadow-lg"
-                />
-              ))}
+              {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-10 h-10 rounded-full border-2 border-white bg-white" />)}
             </div>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300">
               Trusted by <span className="text-white font-semibold">15,000+</span> students, professionals, and everyday users
             </p>
           </div>
