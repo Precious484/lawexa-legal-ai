@@ -16,16 +16,16 @@ const PricingSection = () => {
       '6months': '/6 months • No credit card required',
       '1year': '/yearly • No credit card required'
     },
-    perfectFor: '🎯 Perfect for: First-time users wanting to test our platform',
+    perfectFor: 'Perfect for: First-time users wanting to test our platform',
     description: 'Get a generous taste of Lawexa\'s power with monthly usage limits designed to showcase our capabilities. Perfect for exploring before committing - 87% of our users started here first.',
     features: ['Access to Lawexa Student (10 queries/month)', 'Access to Lawexa Assistant (5 Documents/month)', 'Laws and Statutes', 'Knowledge Library Access'],
-    buttonText: 'Start Free - No Card Needed',
+    buttonText: 'Start Free',
     buttonStyle: 'bg-lawexa-gold text-black hover:bg-lawexa-gold/90',
     popular: false,
-    bottomText: '⚡ Set up in under 60 seconds'
+    bottomText: 'Set up in under 60 seconds'
   }, {
     name: 'Student Plan',
-    subtitle: 'Academic Excellence Made Easy',
+    subtitle: 'Academic Excellence',
     icon: Book,
     prices: {
       monthly: '₦4,900',
@@ -41,7 +41,7 @@ const PricingSection = () => {
       '6months': '/6 months',
       '1year': '/yearly'
     },
-    perfectFor: '🎯 Perfect for: Law students who want to excel and graduate top of their class',
+    perfectFor: 'Perfect for: Law students who want to excel and graduate top of their class',
     description: 'Transform your study experience with AI-powered tools designed specifically for academic success. Plus, get a taste of Lawexa Assistant features to prepare for your career.',
     features: ['Database Access & Smart Search', 'AI Tutor (Your 24/7 Study Companion)', 'Flashcard Generation & Picture-to-Note Conversion'],
     buttonText: 'Claim Student Discount',
@@ -51,7 +51,7 @@ const PricingSection = () => {
       quote: '"Before lawexa, I spent 6 hours researching one case. Now I get comprehensive analysis in minutes. My GPA jumped from 3.2 to 4.1!"',
       author: '- Kemi A., Final Year Student, University of Lagos'
     },
-    bottomText: '💸 Cancel anytime'
+    bottomText: 'Cancel anytime'
   }, {
     name: 'Assistant Plan',
     subtitle: 'Your Personal Legal AI',
@@ -70,13 +70,13 @@ const PricingSection = () => {
       '6months': '/6 months',
       '1year': '/yearly'
     },
-    perfectFor: '🎯 Perfect for: Professionals, entrepreneurs & everyday Nigerians who need legal clarity',
+    perfectFor: 'Perfect for: Professionals, entrepreneurs & everyday Nigerians who need legal clarity',
     description: 'Stop paying ₦50,000+ for simple legal consultations. Get unlimited access to Nigeria\'s most advanced legal AI that works 24/7 for a fraction of the cost of one lawyer visit.',
     features: ['Legal Contract Generation & Analysis', 'Smart Legal Assistant (Ask anything!)', 'Smart Lawyer Connect & Priority Support'],
     buttonText: 'Get Lawexa Assistant',
     buttonStyle: 'bg-lawexa-gold text-black hover:bg-lawexa-gold/90',
     popular: true,
-    savings: '📊 Average User Saves: ₦180,000/month in legal fees',
+    savings: 'Average User Saves: ₦180,000/month in legal fees',
     testimonial: {
       quote: '"As a small business owner, Lawexa is like having a lawyer on speed dial. I\'ve saved a lot in legal fees honestly!"',
       author: '- Kelvin Obimba, Freelance Graphic Designer'
@@ -99,7 +99,7 @@ const PricingSection = () => {
       '6months': '/6 months',
       '1year': '/yearly'
     },
-    perfectFor: '🎯 Perfect for: Growing teams who need collaborative legal intelligence',
+    perfectFor: 'Perfect for: Growing teams who need collaborative legal intelligence',
     description: 'Equip your entire team with enterprise-grade legal AI. Perfect for startups, SMEs, and any business serious about legal compliance and efficiency.',
     features: ['Up to 5 User Accounts & Team Collaboration', 'Admin Dashboard & Usage Analytics', 'Dedicated Account Manager & API Access'],
     buttonText: 'Get Corporate Plan',
@@ -109,7 +109,7 @@ const PricingSection = () => {
       quote: '"Our team replaced our ₦500,000/month legal retainer with lawexa. We get faster responses on quick legal questions we have concerning our operations and connects us directly to domain expert lawyers for a large fraction of the cost we spent on the retainer"',
       author: '- Jesse E., CEO, Codessy Technologies Limited'
     },
-    bottomText: '📈 Free onboarding • Dedicated success manager'
+    bottomText: 'Free onboarding • Dedicated success manager'
   }];
   const periods = [{
     id: 'monthly',
@@ -140,7 +140,7 @@ const PricingSection = () => {
             <div className="bg-muted rounded-full p-1 flex items-center shadow-soft">
               {periods.map(period => <button key={period.id} onClick={() => setSelectedPeriod(period.id)} className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${selectedPeriod === period.id ? 'bg-primary text-primary-foreground shadow-gold' : 'text-muted-foreground hover:text-foreground'}`}>
                   {period.label}
-                  {period.saveLabel && selectedPeriod !== 'monthly' && <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                  {period.saveLabel && selectedPeriod !== 'monthly' && <span className="absolute -top-1 -right-1 bg-success text-success-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                       {period.saveLabel}
                     </span>}
                 </button>)}

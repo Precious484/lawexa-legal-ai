@@ -30,10 +30,10 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <span className="text-2xl text-yellow-500">🏛️</span>
-            <span className="text-xl font-bold text-yellow-500">LAWEXA</span>
-          </div>
+          <Link to="/" className="flex items-center space-x-2 hover:scale-105 transition-transform duration-200">
+            <span className="text-2xl text-primary">🏛️</span>
+            <span className="text-xl font-bold text-primary">LAWEXA</span>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -43,7 +43,7 @@ const Header = () => {
               </Link>
             ))}
             
-            {/* Products Dropdown */}
+           {/* Products Dropdown */}
             <div className="relative group">
               <button 
                 className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-200"
@@ -63,7 +63,8 @@ const Header = () => {
                     <Link
                       key={product.name}
                       to={product.href}
-                      className="block px-4 py-3 text-foreground hover:bg-gray-50 hover:text-primary transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                      className="block px-4 py-3 text-foreground hover:bg-muted hover:text-primary transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg"
+                      onClick={() => setIsProductsOpen(false)}
                     >
                       {product.name}
                     </Link>
@@ -75,12 +76,16 @@ const Header = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
-              Log in
-            </Button>
-            <Button className="btn-gold">
-              Sign Up
-            </Button>
+            <Link to="/login">
+              <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
+                Log in
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="btn-gold">
+                Sign Up
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -120,12 +125,16 @@ const Header = () => {
               </div>
               
               <div className="flex flex-col space-y-3 pt-4 border-t border-border">
-                <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
-                  Log in
-                </Button>
-                <Button className="btn-gold">
-                  Sign Up
-                </Button>
+                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="outline" className="w-full border-foreground text-foreground hover:bg-foreground hover:text-white">
+                    Log in
+                  </Button>
+                </Link>
+                <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full btn-gold">
+                    Sign Up
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>

@@ -49,6 +49,10 @@
     --gradient-glow: radial-gradient(circle, hsl(var(--lawexa-brown-glow) / 0.3), transparent);
     --gradient-gold: linear-gradient(135deg, hsl(var(--lawexa-gold)), hsl(51 100% 60%));
     
+    /* Success Colors */
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+    
     /* Shadows */
     --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
     --shadow-medium: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
@@ -220,5 +224,53 @@
   .animated-underline.active::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+  
+  /* Rolling Number Animation */
+  .rolling-number {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .rolling-number-digit {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Page Transitions */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  /* Logo Carousel */
+  .logo-carousel {
+    animation: scrollLeft 30s linear infinite;
+  }
+  
+  @keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  /* Smooth Scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Enhanced Hover Effects */
+  .enhanced-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .enhanced-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-large);
   }
 }

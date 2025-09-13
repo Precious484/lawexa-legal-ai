@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import RollingNumber from '@/components/RollingNumber';
 import { Users, Target, Globe, Award, Heart, Lightbulb } from 'lucide-react';
 const AboutUs = () => {
   useEffect(() => {
@@ -100,8 +102,8 @@ const AboutUs = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
               <div className="text-center">
-                <div className="w-20 h-20 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-6 bg-slate-50">
-                  <Target className="w-10 h-10 text-black bg-slate-50" />
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Target className="w-10 h-10 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
                 <p className="text-lg text-gray-600">
@@ -111,8 +113,8 @@ const AboutUs = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Award className="w-10 h-10 text-black" />
+                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Award className="w-10 h-10 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Vision</h3>
                 <p className="text-lg text-gray-600">
@@ -134,8 +136,8 @@ const AboutUs = () => {
               {values.map((value, index) => {
               const IconComponent = value.icon;
               return <div key={index} className="text-center group">
-                    <div className="w-16 h-16 bg-lawexa-gold rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-8 h-8 text-black" />
+                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-primary-foreground" />
                     </div>
                     <h3 className="text-xl font-bold mb-3 text-foreground">{value.title}</h3>
                     <p className="text-gray-600">{value.description}</p>
@@ -156,7 +158,7 @@ const AboutUs = () => {
                   <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                   <div className="text-center">
                     <h3 className="text-xl font-bold mb-1 text-foreground">{member.name}</h3>
-                    <p className="text-lawexa-gold font-semibold mb-3">{member.role}</p>
+                    <p className="text-primary font-semibold mb-3">{member.role}</p>
                     <p className="text-sm text-gray-600">{member.description}</p>
                   </div>
                 </div>)}
@@ -172,15 +174,21 @@ const AboutUs = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
               <div>
-                <div className="text-4xl md:text-6xl font-bold text-lawexa-gold mb-2">15,000+</div>
+                <div className="text-4xl md:text-6xl font-bold text-primary mb-2">
+                  <RollingNumber value={15000} formatNumber={(num) => `${num.toLocaleString()}+`} />
+                </div>
                 <p className="text-xl text-gray-300">Active Users</p>
               </div>
               <div>
-                <div className="text-4xl md:text-6xl font-bold text-lawexa-gold mb-2">130+</div>
+                <div className="text-4xl md:text-6xl font-bold text-primary mb-2">
+                  <RollingNumber value={130} formatNumber={(num) => `${num}+`} />
+                </div>
                 <p className="text-xl text-gray-300">Universities Served</p>
               </div>
               <div>
-                <div className="text-4xl md:text-6xl font-bold text-lawexa-gold mb-2">₦50M+</div>
+                <div className="text-4xl md:text-6xl font-bold text-primary mb-2">
+                  <RollingNumber value={50} formatNumber={(num) => `₦${num}M+`} />
+                </div>
                 <p className="text-xl text-gray-300">Saved in Legal Fees</p>
               </div>
             </div>
@@ -197,9 +205,11 @@ const AboutUs = () => {
               Be part of the movement that's transforming how Africa accesses legal knowledge. 
               Start your journey with Lawexa today.
             </p>
-            <button className="bg-lawexa-gold text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-lawexa-gold/90 hover:scale-105 transition-all duration-300">
-              Get Started For Free
-            </button>
+            <Link to="/signup" className="inline-block">
+              <button className="btn-gold text-lg px-8 py-4">
+                Get Started For Free
+              </button>
+            </Link>
           </div>
         </section>
       </main>

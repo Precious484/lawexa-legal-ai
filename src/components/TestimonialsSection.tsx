@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import RollingNumber from './RollingNumber';
+import UniversityCarousel from './UniversityCarousel';
 const TestimonialsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [{
@@ -62,10 +64,15 @@ const TestimonialsSection = () => {
   return <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">15,000+ Active Users</h2>
-          <p className="text-xl text-muted-foreground">
-            Across 130+ Universities
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            <RollingNumber value={15000} formatNumber={(num) => `${num.toLocaleString()}+`} /> Active Users
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Across <RollingNumber value={130} formatNumber={(num) => `${num}+`} /> Universities
           </p>
+          
+          {/* University Carousel */}
+          <UniversityCarousel />
         </div>
 
         {/* Testimonials Carousel */}
