@@ -120,7 +120,7 @@ const Products = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20 animate-fade-in">
+        <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20 animate-fade-in bg-black">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -219,7 +219,7 @@ const Products = () => {
         </section>
 
         {/* Integration Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white">
+        <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white bg-slate-950">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
