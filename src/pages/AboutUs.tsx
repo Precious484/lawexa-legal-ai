@@ -26,25 +26,20 @@ const AboutUs = () => {
     description: 'Creating meaningful change in how legal services are accessed and delivered across Africa.'
   }];
   const team = [{
-    name: 'Adebayo Ogundimu',
-    role: 'CEO & Co-Founder',
-    description: 'Former corporate lawyer with 8+ years experience. LLB from University of Lagos, LLM from Harvard Law School.',
-    image: 'https://placehold.co/300x300/374151/FFD700?text=AO'
+    name: 'Precious Ekong',
+    role: 'CEO & Founder',
+    description: 'Visionary leader driving the democratization of legal knowledge across Africa through innovative AI technology.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=PE'
   }, {
-    name: 'Kemi Adeyemi',
+    name: 'Stay Njokede',
     role: 'CTO & Co-Founder',
-    description: 'AI Engineer and legal tech pioneer. Former Google AI researcher with expertise in NLP and machine learning.',
-    image: 'https://placehold.co/300x300/374151/FFD700?text=KA'
+    description: 'Technology architect building cutting-edge AI solutions for legal intelligence and accessibility.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=SN'
   }, {
-    name: 'Chioma Okwu',
+    name: 'Akintola Temiloluwa',
     role: 'Head of Legal Research',
-    description: 'Senior Advocate of Nigeria with 12+ years in commercial law. PhD in Constitutional Law from Oxford.',
-    image: 'https://placehold.co/300x300/374151/FFD700?text=CO'
-  }, {
-    name: 'Tunde Alabi',
-    role: 'Head of Product',
-    description: 'Product strategist with experience building fintech solutions for African markets. MBA from INSEAD.',
-    image: 'https://placehold.co/300x300/374151/FFD700?text=TA'
+    description: 'Graduate of Law from Lead City University, leading our legal research and content development initiatives.',
+    image: 'https://placehold.co/300x300/374151/FFD700?text=AT'
   }];
   return <div className="min-h-screen bg-background">
       <Header />
@@ -151,7 +146,7 @@ We're on a mission to democratize legal knowledge across Africa, making professi
             <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-foreground">
               Meet Our Team
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {team.map((member, index) => <div key={index} className="bg-white rounded-2xl p-6 shadow-medium hover:shadow-large transition-shadow duration-300">
                   <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                   <div className="text-center">
