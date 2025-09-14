@@ -140,7 +140,7 @@ const PricingSection = () => {
             <div className="bg-muted rounded-full p-1 flex items-center shadow-soft">
               {periods.map(period => <button key={period.id} onClick={() => setSelectedPeriod(period.id)} className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${selectedPeriod === period.id ? 'bg-primary text-primary-foreground shadow-gold' : 'text-muted-foreground hover:text-foreground'}`}>
                   {period.label}
-                  {period.saveLabel && selectedPeriod !== 'monthly' && <span className="absolute -top-1 -right-1 bg-success text-success-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                   {period.saveLabel && selectedPeriod !== 'monthly' && <span className="absolute -top-1 -right-1 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                       {period.saveLabel}
                     </span>}
                 </button>)}

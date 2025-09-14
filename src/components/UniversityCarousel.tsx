@@ -4,7 +4,7 @@ const UniversityCarousel = () => {
   const [currentOffset, setCurrentOffset] = useState(0);
 
   const universities = [
-    // Nigeria
+    // Nigeria Universities
     'University of Lagos',
     'University of Ibadan',
     'Ahmadu Bello University',
@@ -25,6 +25,37 @@ const UniversityCarousel = () => {
     'University of Calabar',
     'Bayero University',
     'University of Maiduguri',
+    // Nigerian Law Firms & Companies
+    'Aluko & Oyebode',
+    'Templars Law',
+    'Banwo & Ighodalo',
+    'Udo Udoma & Belo-Osagie',
+    'G. Elias & Co',
+    'Olaniwun Ajayi LP',
+    'Jackson, Etti & Edu',
+    'Advocaat Law Practice',
+    'Perchstone & Graeys',
+    'Bloomfield Law Practice',
+    'Kenna Partners',
+    'Ajumogobia & Okeke',
+    'Fola Arthur & Associates',
+    'A.O. Alegeh & Co',
+    'Olalekan Omisore & Co',
+    'Total Nigeria',
+    'Shell Nigeria',
+    'MTN Nigeria',
+    'Dangote Group',
+    'Access Bank',
+    'GTBank',
+    'FirstBank Nigeria',
+    'Zenith Bank',
+    'UBA Group',
+    'Fidelity Bank',
+    'Stanbic IBTC',
+    'Ecobank Nigeria',
+    'Nigerian Breweries',
+    'Nestle Nigeria',
+    'Unilever Nigeria',
     // Ghana
     'University of Ghana',
     'Kwame Nkrumah University',

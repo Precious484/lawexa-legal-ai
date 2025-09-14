@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import PlatformSection from '@/components/PlatformSection';
@@ -10,6 +11,8 @@ import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  useScrollAnimation();
+  
   useEffect(() => {
     // Smooth scroll behavior for anchor links
     const handleSmoothScroll = (e: Event) => {

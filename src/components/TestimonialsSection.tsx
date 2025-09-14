@@ -56,7 +56,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % testimonials.length);
-    }, 5000);
+    }, 4000); // Continuous auto-scroll
     return () => clearInterval(interval);
   }, []);
   const getVisibleTestimonials = () => {

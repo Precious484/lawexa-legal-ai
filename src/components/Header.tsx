@@ -18,7 +18,7 @@ const Header = () => {
     { name: 'About Us', href: '/about' },
     { name: 'Blog', href: '/blog' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Features', href: '/features' }
+    { name: 'Products', href: '/products' }
   ];
 
   const productLinks = [
@@ -41,43 +41,12 @@ const Header = () => {
               <Link 
                 key={link.name} 
                 to={link.href} 
-                className="text-foreground hover:text-primary transition-colors duration-300"
+                className={`text-foreground hover:text-primary transition-colors duration-300 relative ${window.location.pathname === link.href ? 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''}`}
                 onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
               >
                 {link.name}
               </Link>
             ))}
-            
-           {/* Products Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsProductsOpen(true)}
-              onMouseLeave={() => setIsProductsOpen(false)}
-            >
-              <button 
-                className="flex items-center gap-1 text-foreground hover:text-primary transition-colors duration-300"
-              >
-                Products <ChevronDown className="w-4 h-4" />
-              </button>
-              
-              {isProductsOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-border rounded-lg shadow-large z-50 animate-fade-in">
-                  {productLinks.map(product => (
-                    <Link
-                      key={product.name}
-                      to={`/products#${product.name.toLowerCase().replace('lawexa ', '')}`}
-                      className="block px-4 py-3 text-foreground hover:bg-muted hover:text-primary transition-colors duration-300 first:rounded-t-lg last:rounded-b-lg"
-                      onClick={() => {
-                        setIsProductsOpen(false);
-                        setTimeout(() => window.scrollTo(0, 0), 100);
-                      }}
-                    >
-                      {product.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
           </nav>
 
           {/* Desktop Auth Buttons */}
@@ -118,23 +87,6 @@ const Header = () => {
                 </Link>
               ))}
               
-              {/* Mobile Products Section */}
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-semibold text-gray-500 mb-2">Products</p>
-                {productLinks.map(product => (
-                  <Link
-                    key={product.name}
-                    to={`/products#${product.name.toLowerCase().replace('lawexa ', '')}`}
-                    className="block py-2 text-foreground hover:text-primary transition-colors duration-300"
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setTimeout(() => window.scrollTo(0, 0), 100);
-                    }}
-                  >
-                    {product.name}
-                  </Link>
-                ))}
-              </div>
               
               <div className="flex flex-col space-y-3 pt-4 border-t border-border">
                 <Link to="/login" onClick={() => setIsMenuOpen(false)}>

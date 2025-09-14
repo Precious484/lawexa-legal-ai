@@ -11,7 +11,7 @@ import StudentProduct from "./pages/StudentProduct";
 import AssistantProduct from "./pages/AssistantProduct";
 import ApiProduct from "./pages/ApiProduct";
 import PricingPage from "./pages/PricingPage";
-import FeaturesPage from "./pages/FeaturesPage";
+
 import Compare from "./pages/Compare";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
