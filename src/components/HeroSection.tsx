@@ -47,7 +47,7 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">Ask any legal question, Understand Contracts and more In minutes. 
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">Ask any legal question, Understand Contracts and more In minutes.  
 No Law Degree Required</p>
 
           {/* CTA Button */}
