@@ -49,11 +49,8 @@ const AboutUs = () => {
         <section className="bg-lawexa-dark text-white py-20 bg-slate-950">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Built By Lawyers. 
-                
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8">
+              <h1 className="text-4xl font-bold mb-6 text-yellow-400 md:text-6xl">Built By Lawyers</h1>
+              <p className="text-xl md:text-2xl mb-8 text-yellow-300">
                 Designed For Africa.
               </p>
               <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -67,7 +64,7 @@ const AboutUs = () => {
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-foreground">
+              <h2 className="text-3xl font-bold text-center mb-12 text-foreground md:text-5xl">
                 Our Story
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600">
