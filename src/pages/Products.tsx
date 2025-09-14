@@ -120,20 +120,7 @@ const Products = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20 animate-fade-in bg-black">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                All-in-One Platform
-                <span className="text-accent block mt-2">Legal Intelligence</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8">
-                Discover Lawexa's comprehensive suite of AI-powered legal tools designed for students, professionals, and businesses.
-              </p>
-              
-            </div>
-          </div>
-        </section>
+        
 
         {/* Stats Section */}
         
@@ -144,9 +131,7 @@ const Products = () => {
         {/* Products Section */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-foreground">
-              Our Products
-            </h2>
+            
             <div className="space-y-20">
               {products.map((product, index) => {
               const IconComponent = product.icon;
