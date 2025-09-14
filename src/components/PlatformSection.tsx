@@ -63,59 +63,85 @@ const PlatformSection = () => {
     image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Legal+Pulse'
   }];
   const comparisonData = [{
-    feature: 'AI Legal Tutor',
+    feature: 'Nigerian Law Database',
     lawexa: true,
-    aiLegalCo: false,
-    lawMate: true,
-    legalBot: false
+    lawPavilion: true,
+    chatGPT: false,
+    gemini: false,
+    harvey: false,
+    caseRadar: true
   }, {
-    feature: 'Cases & Statutes Library',
+    feature: 'AI-Powered Legal Analysis',
     lawexa: true,
-    aiLegalCo: true,
-    lawMate: false,
-    legalBot: false
+    lawPavilion: false,
+    chatGPT: true,
+    gemini: true,
+    harvey: true,
+    caseRadar: false
   }, {
-    feature: 'Picture to Note',
+    feature: 'Contract Generation',
     lawexa: true,
-    aiLegalCo: false,
-    lawMate: false,
-    legalBot: true
+    lawPavilion: false,
+    chatGPT: false,
+    gemini: false,
+    harvey: true,
+    caseRadar: false
   }, {
-    feature: 'Trending Folders',
+    feature: 'Legal Document Analysis',
     lawexa: true,
-    aiLegalCo: false,
-    lawMate: false,
-    legalBot: false
+    lawPavilion: false,
+    chatGPT: true,
+    gemini: true,
+    harvey: true,
+    caseRadar: false
   }, {
-    feature: 'AI Legal Assistant',
+    feature: 'Nigerian Court Decisions',
     lawexa: true,
-    aiLegalCo: true,
-    lawMate: true,
-    legalBot: true
+    lawPavilion: true,
+    chatGPT: false,
+    gemini: false,
+    harvey: false,
+    caseRadar: true
   }, {
-    feature: 'Clause Explainer',
+    feature: 'Real-time Legal Updates',
     lawexa: true,
-    aiLegalCo: true,
-    lawMate: false,
-    legalBot: false
+    lawPavilion: true,
+    chatGPT: false,
+    gemini: false,
+    harvey: false,
+    caseRadar: true
   }, {
-    feature: 'Automated Lawyer Connect',
+    feature: 'Student-Friendly Pricing',
     lawexa: true,
-    aiLegalCo: false,
-    lawMate: false,
-    legalBot: false
+    lawPavilion: false,
+    chatGPT: false,
+    gemini: false,
+    harvey: false,
+    caseRadar: false
   }, {
-    feature: 'Legal Pulse',
+    feature: 'Academic Tools & Resources',
     lawexa: true,
-    aiLegalCo: true,
-    lawMate: false,
-    legalBot: true
+    lawPavilion: false,
+    chatGPT: false,
+    gemini: false,
+    harvey: false,
+    caseRadar: false
   }, {
-    feature: '24/7 Support',
+    feature: 'Lawyer Connect Feature',
     lawexa: true,
-    aiLegalCo: true,
-    lawMate: true,
-    legalBot: false
+    lawPavilion: false,
+    chatGPT: false,
+    gemini: false,
+    harvey: false,
+    caseRadar: false
+  }, {
+    feature: 'Local Language Support',
+    lawexa: true,
+    lawPavilion: false,
+    chatGPT: true,
+    gemini: true,
+    harvey: false,
+    caseRadar: false
   }];
   const currentFeatures = activeTab === 'study' ? studyFeatures : legalFeatures;
   const handleTabChange = (tab: string) => {
@@ -127,49 +153,90 @@ const PlatformSection = () => {
     setActiveFeature(index);
   };
   if (showComparison) {
-    return <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-8">
-              Lawexa vs. The Rest
-            </h2>
-            <Button onClick={() => setShowComparison(false)} variant="outline" className="mb-8">
-              ← Back to Features
+    return (
+      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showComparison ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="border border-border rounded-xl shadow-large bg-card p-6 mt-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              How Lawexa Compares
+            </h3>
+            <Button 
+              onClick={() => setShowComparison(false)} 
+              variant="outline" 
+              size="sm"
+              className="text-sm"
+            >
+              ← Hide Comparison
             </Button>
           </div>
 
-          <div className="overflow-x-auto rounded-lg shadow-large border border-border bg-card">
-            <table className="min-w-full divide-y divide-border">
-              <thead className="bg-muted">
-                <tr>
-                  <th scope="col" className="px-6 py-4 text-left text-xs font-semibold text-muted-foreground uppercase tracking-wider">Feature</th>
-                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">Lawexa</th>
-                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">AI Legal Co.</th>
-                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">LawMate</th>
-                  <th scope="col" className="px-6 py-4 text-center text-xs font-semibold text-muted-foreground uppercase tracking-wider">Legal-Bot</th>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="text-left p-4 font-semibold text-foreground">Features</th>
+                  <th className="text-center p-4 font-semibold bg-primary text-primary-foreground rounded-t-lg">Lawexa</th>
+                  <th className="text-center p-4 font-semibold text-muted-foreground">Law Pavilion</th>
+                  <th className="text-center p-4 font-semibold text-muted-foreground">ChatGPT</th>
+                  <th className="text-center p-4 font-semibold text-muted-foreground">Gemini</th>
+                  <th className="text-center p-4 font-semibold text-muted-foreground">Harvey</th>
+                  <th className="text-center p-4 font-semibold text-muted-foreground">Case Radar</th>
                 </tr>
               </thead>
-              <tbody className="bg-card divide-y divide-border">
-                {comparisonData.map((item, index) => <tr key={index} className="hover:bg-muted/50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-foreground">{item.feature}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
-                      {item.lawexa ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+              <tbody>
+                {comparisonData.map((item, index) => (
+                  <tr key={index} className={index % 2 === 0 ? 'bg-muted/30' : 'bg-background'}>
+                    <td className="p-4 font-medium text-foreground">{item.feature}</td>
+                    <td className="p-4 text-center">
+                      {item.lawexa ? (
+                        <span className="text-green-500 font-bold text-xl">✓</span>
+                      ) : (
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                      )}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
-                      {item.aiLegalCo ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    <td className="p-4 text-center">
+                      {item.lawPavilion ? (
+                        <span className="text-green-500 font-bold text-xl">✓</span>
+                      ) : (
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                      )}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
-                      {item.lawMate ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    <td className="p-4 text-center">
+                      {item.chatGPT ? (
+                        <span className="text-green-500 font-bold text-xl">✓</span>
+                      ) : (
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                      )}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-center text-sm">
-                      {item.legalBot ? <span className="text-primary font-bold text-xl">✓</span> : <span className="text-muted-foreground">—</span>}
+                    <td className="p-4 text-center">
+                      {item.gemini ? (
+                        <span className="text-green-500 font-bold text-xl">✓</span>
+                      ) : (
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                      )}
                     </td>
-                  </tr>)}
+                    <td className="p-4 text-center">
+                      {item.harvey ? (
+                        <span className="text-green-500 font-bold text-xl">✓</span>
+                      ) : (
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                      )}
+                    </td>
+                    <td className="p-4 text-center">
+                      {item.caseRadar ? (
+                        <span className="text-green-500 font-bold text-xl">✓</span>
+                      ) : (
+                        <span className="text-red-500 font-bold text-xl">✗</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
-      </section>;
+      </div>
+    );
   }
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -180,7 +247,9 @@ const PlatformSection = () => {
           </h1>
           
           <div className="flex items-center justify-center space-x-2 p-1 bg-muted rounded-full mb-12 shadow-soft inline-flex">
-            <button onClick={() => handleTabChange('study')} className={`px-6 py-2 text-sm md:text-base font-medium rounded-full transition-all duration-300 transform ${activeTab === 'study' ? 'bg-primary text-primary-foreground scale-105' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:scale-102'}`}>NWLR</button>
+            <button onClick={() => handleTabChange('study')} className={`px-6 py-2 text-sm md:text-base font-medium rounded-full transition-all duration-300 transform ${activeTab === 'study' ? 'bg-primary text-primary-foreground scale-105' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:scale-102'}`}>
+              For Study
+            </button>
             <button onClick={() => handleTabChange('legal')} className={`px-6 py-2 text-sm md:text-base font-medium rounded-full transition-all duration-300 transform ${activeTab === 'legal' ? 'bg-primary text-primary-foreground scale-105' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:scale-102'}`}>
               For Legal Help
             </button>
@@ -233,11 +302,91 @@ const PlatformSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             See how Lawexa stacks up.
           </h2>
-          <Button onClick={() => window.open('/products', '_blank')} variant="outline" className="px-8 py-4 font-semibold">
-            Compare Our Features
-            <span className="ml-2 font-light text-muted-foreground">&gt;</span>
+          <Button 
+            onClick={() => setShowComparison(!showComparison)} 
+            variant="outline" 
+            className="px-8 py-4 font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+          >
+            {showComparison ? 'Hide' : 'Compare Our Features'}
+            <span className="ml-2 font-light">{showComparison ? '↑' : '↓'}</span>
           </Button>
         </div>
+        
+        {/* Expandable Comparison Table */}
+        {showComparison && (
+          <div className="mt-8 animate-fade-in">
+            {showComparison && (
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showComparison ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className="border border-border rounded-xl shadow-large bg-card p-6">
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead>
+                        <tr className="border-b border-border">
+                          <th className="text-left p-4 font-semibold text-foreground">Features</th>
+                          <th className="text-center p-4 font-semibold bg-primary text-primary-foreground rounded-t-lg">Lawexa</th>
+                          <th className="text-center p-4 font-semibold text-muted-foreground">Law Pavilion</th>
+                          <th className="text-center p-4 font-semibold text-muted-foreground">ChatGPT</th>
+                          <th className="text-center p-4 font-semibold text-muted-foreground">Gemini</th>
+                          <th className="text-center p-4 font-semibold text-muted-foreground">Harvey</th>
+                          <th className="text-center p-4 font-semibold text-muted-foreground">Case Radar</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {comparisonData.map((item, index) => (
+                          <tr key={index} className={index % 2 === 0 ? 'bg-muted/30' : 'bg-background'}>
+                            <td className="p-4 font-medium text-foreground">{item.feature}</td>
+                            <td className="p-4 text-center">
+                              {item.lawexa ? (
+                                <span className="text-green-500 font-bold text-xl">✓</span>
+                              ) : (
+                                <span className="text-red-500 font-bold text-xl">✗</span>
+                              )}
+                            </td>
+                            <td className="p-4 text-center">
+                              {item.lawPavilion ? (
+                                <span className="text-green-500 font-bold text-xl">✓</span>
+                              ) : (
+                                <span className="text-red-500 font-bold text-xl">✗</span>
+                              )}
+                            </td>
+                            <td className="p-4 text-center">
+                              {item.chatGPT ? (
+                                <span className="text-green-500 font-bold text-xl">✓</span>
+                              ) : (
+                                <span className="text-red-500 font-bold text-xl">✗</span>
+                              )}
+                            </td>
+                            <td className="p-4 text-center">
+                              {item.gemini ? (
+                                <span className="text-green-500 font-bold text-xl">✓</span>
+                              ) : (
+                                <span className="text-red-500 font-bold text-xl">✗</span>
+                              )}
+                            </td>
+                            <td className="p-4 text-center">
+                              {item.harvey ? (
+                                <span className="text-green-500 font-bold text-xl">✓</span>
+                              ) : (
+                                <span className="text-red-500 font-bold text-xl">✗</span>
+                              )}
+                            </td>
+                            <td className="p-4 text-center">
+                              {item.caseRadar ? (
+                                <span className="text-green-500 font-bold text-xl">✓</span>
+                              ) : (
+                                <span className="text-red-500 font-bold text-xl">✗</span>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </section>;
 };
