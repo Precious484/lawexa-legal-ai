@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import avatar1 from '@/assets/avatar-1.jpg';
+import avatar2 from '@/assets/avatar-2.jpg';
+import avatar3 from '@/assets/avatar-3.jpg';
 const HeroSection = () => {
   const [currentWord, setCurrentWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +35,7 @@ const HeroSection = () => {
     };
     typeWord();
   }, [currentIndex, isTyping]);
-  const avatars = ['https://api.dicebear.com/7.x/avataaars/svg?seed=John', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jane', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Bob'];
+  const avatars = [avatar1, avatar2, avatar3];
   return <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-16">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
