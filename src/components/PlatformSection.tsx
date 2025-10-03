@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+
 const PlatformSection = () => {
   const [activeTab, setActiveTab] = useState('study');
   const [activeFeature, setActiveFeature] = useState(0);
-  const [showComparison, setShowComparison] = useState(false);
   const studyFeatures = [{
     icon: <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -62,149 +61,14 @@ const PlatformSection = () => {
     description: 'Stay informed with legal insights on trending news and social issues. Understand the legal implications of current events and viral topics.',
     image: 'https://placehold.co/400x260/FFD700/1a1a1a?text=Legal+Pulse'
   }];
-  const comparisonData = [{
-    feature: 'Nigerian Law Database',
-    lawexa: true,
-    lawPavilion: true,
-    chatGPT: false,
-    gemini: false,
-    harvey: false,
-    caseRadar: true
-  }, {
-    feature: 'AI-Powered Legal Analysis',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: true,
-    gemini: true,
-    harvey: true,
-    caseRadar: false
-  }, {
-    feature: 'Contract Generation',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: false,
-    gemini: false,
-    harvey: true,
-    caseRadar: false
-  }, {
-    feature: 'Legal Document Analysis',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: true,
-    gemini: true,
-    harvey: true,
-    caseRadar: false
-  }, {
-    feature: 'Nigerian Court Decisions',
-    lawexa: true,
-    lawPavilion: true,
-    chatGPT: false,
-    gemini: false,
-    harvey: false,
-    caseRadar: true
-  }, {
-    feature: 'Real-time Legal Updates',
-    lawexa: true,
-    lawPavilion: true,
-    chatGPT: false,
-    gemini: false,
-    harvey: false,
-    caseRadar: true
-  }, {
-    feature: 'Student-Friendly Pricing',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: false,
-    gemini: false,
-    harvey: false,
-    caseRadar: false
-  }, {
-    feature: 'Academic Tools & Resources',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: false,
-    gemini: false,
-    harvey: false,
-    caseRadar: false
-  }, {
-    feature: 'Lawyer Connect Feature',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: false,
-    gemini: false,
-    harvey: false,
-    caseRadar: false
-  }, {
-    feature: 'Local Language Support',
-    lawexa: true,
-    lawPavilion: false,
-    chatGPT: true,
-    gemini: true,
-    harvey: false,
-    caseRadar: false
-  }];
   const currentFeatures = activeTab === 'study' ? studyFeatures : legalFeatures;
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     setActiveFeature(0);
-    setShowComparison(false);
   };
   const handleFeatureHover = (index: number) => {
     setActiveFeature(index);
   };
-  if (showComparison) {
-    return <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showComparison ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="border border-border rounded-xl shadow-large bg-card p-6 mt-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              How Lawexa Compares
-            </h3>
-            <Button onClick={() => setShowComparison(false)} variant="outline" size="sm" className="text-sm">
-              ← Hide Comparison
-            </Button>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left p-4 font-semibold text-foreground">Features</th>
-                  <th className="text-center p-4 font-semibold bg-primary text-primary-foreground rounded-t-lg">Lawexa</th>
-                  <th className="text-center p-4 font-semibold text-muted-foreground">Law Pavilion</th>
-                  <th className="text-center p-4 font-semibold text-muted-foreground">ChatGPT</th>
-                  <th className="text-center p-4 font-semibold text-muted-foreground">Gemini</th>
-                  <th className="text-center p-4 font-semibold text-muted-foreground">Harvey</th>
-                  <th className="text-center p-4 font-semibold text-muted-foreground">NWLR</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonData.map((item, index) => <tr key={index} className={index % 2 === 0 ? 'bg-muted/30' : 'bg-background'}>
-                    <td className="p-4 font-medium text-foreground">{item.feature}</td>
-                    <td className="p-4 text-center">
-                      {item.lawexa ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                    </td>
-                    <td className="p-4 text-center">
-                      {item.lawPavilion ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                    </td>
-                    <td className="p-4 text-center">
-                      {item.chatGPT ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                    </td>
-                    <td className="p-4 text-center">
-                      {item.gemini ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                    </td>
-                    <td className="p-4 text-center">
-                      {item.harvey ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                    </td>
-                    <td className="p-4 text-center">
-                      {item.caseRadar ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                    </td>
-                  </tr>)}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>;
-  }
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Header and Tabs */}
@@ -259,67 +123,6 @@ const PlatformSection = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center mt-12">
-          
-        </div>
-
-        {/* Comparison Section */}
-        <div className="text-center mt-24">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-            See how Lawexa stacks up.
-          </h2>
-          <Button onClick={() => setShowComparison(!showComparison)} variant="outline" className="px-8 py-4 font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-            {showComparison ? 'Hide' : 'Compare Our Features'}
-            <span className="ml-2 font-light">{showComparison ? '↑' : '↓'}</span>
-          </Button>
-        </div>
-        
-        {/* Expandable Comparison Table */}
-        {showComparison && <div className="mt-8 animate-fade-in">
-            {showComparison && <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showComparison ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="border border-border rounded-xl shadow-large bg-card p-6">
-                  <div className="overflow-x-auto">
-                    <table className="w-full">
-                      <thead>
-                        <tr className="border-b border-border">
-                          <th className="text-left p-4 font-semibold text-foreground">Features</th>
-                          <th className="text-center p-4 font-semibold bg-primary text-primary-foreground rounded-t-lg">Lawexa</th>
-                          <th className="text-center p-4 font-semibold text-muted-foreground">Law Pavilion</th>
-                          <th className="text-center p-4 font-semibold text-muted-foreground">ChatGPT</th>
-                          <th className="text-center p-4 font-semibold text-muted-foreground">Gemini</th>
-                          <th className="text-center p-4 font-semibold text-muted-foreground">Harvey</th>
-                          <th className="text-center p-4 font-semibold text-muted-foreground">Case Radar</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {comparisonData.map((item, index) => <tr key={index} className={index % 2 === 0 ? 'bg-muted/30' : 'bg-background'}>
-                            <td className="p-4 font-medium text-foreground">{item.feature}</td>
-                            <td className="p-4 text-center">
-                              {item.lawexa ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                            </td>
-                            <td className="p-4 text-center">
-                              {item.lawPavilion ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                            </td>
-                            <td className="p-4 text-center">
-                              {item.chatGPT ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                            </td>
-                            <td className="p-4 text-center">
-                              {item.gemini ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                            </td>
-                            <td className="p-4 text-center">
-                              {item.harvey ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                            </td>
-                            <td className="p-4 text-center">
-                              {item.caseRadar ? <span className="text-green-500 font-bold text-xl">✓</span> : <span className="text-red-500 font-bold text-xl">✗</span>}
-                            </td>
-                          </tr>)}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>}
-          </div>}
       </div>
     </section>;
 };

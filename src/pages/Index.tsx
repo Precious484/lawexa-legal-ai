@@ -3,9 +3,11 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import PlatformSection from '@/components/PlatformSection';
+import ComparisonSection from '@/components/ComparisonSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import VideoSection from '@/components/VideoSection';
 import PricingSection from '@/components/PricingSection';
+import WhatsAppCommunitySection from '@/components/WhatsAppCommunitySection';
 import DownloadSection from '@/components/DownloadSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
@@ -66,11 +68,13 @@ const Index = () => {
         <section id="features">
           <PlatformSection />
         </section>
+        <ComparisonSection />
         <TestimonialsSection />
         <VideoSection />
         <section id="pricing">
           <PricingSection />
         </section>
+        <WhatsAppCommunitySection />
         <DownloadSection />
         <section id="faq">
           <FAQSection />
