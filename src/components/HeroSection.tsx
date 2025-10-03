@@ -33,11 +33,27 @@ const HeroSection = () => {
     typeWord();
   }, [currentIndex, isTyping]);
   const avatars = ['https://api.dicebear.com/7.x/avataaars/svg?seed=John', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Jane', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Bob'];
-  return <section className="relative min-h-screen bg-lawexa-dark hero-grid flex items-center justify-center text-white overflow-hidden pt-16 bg-[#000a0e]">
-      <div className="container mx-auto px-4 text-center z-10">
+  return <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-16">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{ filter: 'brightness(0.7)' }}
+        >
+          <source src="/hero-background.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <div className="container mx-auto px-4 text-center z-10 relative">
         <div className="max-w-4xl mx-auto fade-in">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
             <span className="text-primary">Legal Intelligence</span>
             <br />
             <span className="text-primary">For </span>
@@ -47,11 +63,11 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">Ask any legal question, Understand Contracts and more In minutes. 
+          <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md">Ask any legal question, Understand Contracts and more In minutes. 
 No Law Degree Required</p>
 
           {/* CTA Button */}
-          <Button className="btn-gold text-lg px-8 py-4 mb-12">
+          <Button className="btn-gold text-lg px-8 py-4 mb-12 shadow-xl">
             Try For Free
           </Button>
 
@@ -60,7 +76,7 @@ No Law Degree Required</p>
             <div className="flex -space-x-2">
               {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-10 h-10 rounded-full border-2 border-white bg-white" />)}
             </div>
-            <p className="text-gray-300">
+            <p className="text-gray-100 drop-shadow-md">
               Trusted by <span className="text-white font-semibold">15,000+</span> students, professionals, and everyday users
             </p>
           </div>
