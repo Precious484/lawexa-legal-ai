@@ -26,13 +26,13 @@ const Header = () => {
     { name: 'Lawexa Assistant', href: '/products/assistant' },
     { name: 'Lawexa API', href: '/products/api' }
   ];
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-medium' : 'bg-white/95 backdrop-blur-sm'}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-medium' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover:scale-105 transition-transform duration-200">
-            <span className="text-2xl text-primary">🏛️</span>
-            <span className="text-xl font-bold text-primary">LAWEXA</span>
+            <span className="text-2xl">🏛️</span>
+            <span className={`text-xl font-bold transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}>LAWEXA</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,7 +41,11 @@ const Header = () => {
               <Link 
                 key={link.name} 
                 to={link.href} 
-                className={`text-foreground hover:text-primary transition-colors duration-300 relative ${window.location.pathname === link.href ? 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''}`}
+                className={`transition-colors duration-300 relative ${
+                  isScrolled 
+                    ? 'text-foreground hover:text-primary' 
+                    : 'text-white hover:text-gray-300'
+                } ${window.location.pathname === link.href ? 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary' : ''}`}
                 onClick={() => setTimeout(() => window.scrollTo(0, 0), 100)}
               >
                 {link.name}
@@ -53,7 +57,11 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline" 
-              className="border-foreground text-foreground hover:bg-foreground hover:text-white"
+              className={`transition-colors duration-300 ${
+                isScrolled 
+                  ? 'border-foreground text-foreground hover:bg-foreground hover:text-white' 
+                  : 'border-white text-white hover:bg-white hover:text-primary'
+              }`}
               onClick={() => window.open('https://app.lawexa.com/login', '_blank')}
             >
               Log in
@@ -67,7 +75,10 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button 
+            className={`md:hidden transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-white'}`} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -80,7 +91,11 @@ const Header = () => {
                 <Link 
                   key={link.name} 
                   to={link.href} 
-                  className="text-foreground hover:text-primary transition-colors duration-300" 
+                  className={`transition-colors duration-300 ${
+                    isScrolled 
+                      ? 'text-foreground hover:bg-gray-100' 
+                      : 'text-gray-800 hover:bg-gray-100'
+                  }`}
                   onClick={() => {
                     setIsMenuOpen(false);
                     setTimeout(() => window.scrollTo(0, 0), 100);
