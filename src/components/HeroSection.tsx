@@ -37,8 +37,8 @@ const HeroSection = () => {
   }, [currentIndex, isTyping]);
   const avatars = [avatar1, avatar2, avatar3];
   return <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-16">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      {/* Video Background with solid black background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
         <video 
           autoPlay 
           loop 

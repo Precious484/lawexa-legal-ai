@@ -51,16 +51,19 @@ const Header = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/login">
-              <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground hover:text-white">
-                Log in
-              </Button>
-            </Link>
-            <Link to="/signup">
-              <Button className="btn-gold">
-                Sign Up
-              </Button>
-            </Link>
+            <Button 
+              variant="outline" 
+              className="border-foreground text-foreground hover:bg-foreground hover:text-white"
+              onClick={() => window.open('https://app.lawexa.com/login', '_blank')}
+            >
+              Log in
+            </Button>
+            <Button 
+              className="btn-gold"
+              onClick={() => window.open('https://app.lawexa.com/register', '_blank')}
+            >
+              Sign Up
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -89,16 +92,25 @@ const Header = () => {
               
               
               <div className="flex flex-col space-y-3 pt-4 border-t border-border">
-                <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="outline" className="w-full border-foreground text-foreground hover:bg-foreground hover:text-white">
-                    Log in
-                  </Button>
-                </Link>
-                <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full btn-gold">
-                    Sign Up
-                  </Button>
-                </Link>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-foreground text-foreground hover:bg-foreground hover:text-white"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    window.open('https://app.lawexa.com/login', '_blank');
+                  }}
+                >
+                  Log in
+                </Button>
+                <Button 
+                  className="w-full btn-gold"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    window.open('https://app.lawexa.com/register', '_blank');
+                  }}
+                >
+                  Sign Up
+                </Button>
               </div>
             </nav>
           </div>
