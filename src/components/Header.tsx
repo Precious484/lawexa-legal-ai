@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import lawexaLogo from '@/assets/lawexa-logo.png';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +31,8 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 hover:scale-105 transition-transform duration-200">
-            <span className="text-2xl">🏛️</span>
-            <span className={`text-xl font-bold transition-colors duration-300 ${isScrolled ? 'text-primary' : 'text-white'}`}>LAWEXA</span>
+          <Link to="/" className="flex items-center hover:scale-105 transition-transform duration-200">
+            <img src={lawexaLogo} alt="Lawexa Logo" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,7 +60,7 @@ const Header = () => {
               className={`transition-colors duration-300 ${
                 isScrolled 
                   ? 'border-foreground text-foreground hover:bg-foreground hover:text-white' 
-                  : 'border-white text-white hover:bg-white hover:text-primary'
+                  : 'border-white text-white hover:bg-gold hover:text-black hover:border-gold'
               }`}
               onClick={() => window.open('https://app.lawexa.com/login', '_blank')}
             >
