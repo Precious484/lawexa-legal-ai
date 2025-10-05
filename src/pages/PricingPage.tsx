@@ -6,7 +6,7 @@ const PricingPage = () => {
       <div className="bg-black min-h-[64px] flex items-center">
         <Header />
       </div>
-      <div className="pt-16 bg-slate-900">
+      <div className="pt-16 bg-slate-950">
         <PricingSection />
       </div>
       <Footer />
