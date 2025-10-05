@@ -124,14 +124,14 @@ const PricingSection = () => {
     label: 'Yearly',
     saveLabel: 'Save 20%'
   }];
-  return <section className="py-20 bg-lawexa-dark text-white">
+  return <section className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-800">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
             Unlock Your Legal Advantage
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-500">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
             Join 10,000+ professionals who save 15+ hours per week with AI-powered legal intelligence
           </p>
 

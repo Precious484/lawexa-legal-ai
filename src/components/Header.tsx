@@ -60,7 +60,7 @@ const Header = () => {
               className={`transition-colors duration-300 ${
                 isScrolled 
                   ? 'bg-transparent border-foreground text-foreground hover:bg-foreground hover:text-white' 
-                  : 'bg-transparent border-white text-white hover:bg-gold hover:text-black hover:border-gold'
+                  : 'bg-transparent border-white text-white hover:bg-white hover:text-black hover:border-white'
               }`}
               onClick={() => window.open('https://app.lawexa.com/login', '_blank')}
             >

@@ -2,6 +2,12 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import RollingNumber from './RollingNumber';
 import UniversityCarousel from './UniversityCarousel';
+import avatarLawyerFemale from '@/assets/avatar-lawyer-female.jpg';
+import avatarStudentMale from '@/assets/avatar-student-male.jpg';
+import avatarProfessionalFemale from '@/assets/avatar-professional-female.jpg';
+import avatarStudentFemale from '@/assets/avatar-student-female.jpg';
+import avatarProfessionalMale from '@/assets/avatar-professional-male.jpg';
+import avatarLawyerMale from '@/assets/avatar-lawyer-male.jpg';
 const TestimonialsSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const testimonials = [{
@@ -9,49 +15,49 @@ const TestimonialsSection = () => {
     name: "Kehinde",
     title: "Student, 300L Unilag",
     type: "Student",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Kehinde"
+    avatar: avatarStudentMale
   }, {
     quote: "I honestly didn't expect it to be this good. I use it for everything. I just open Lawexa AI and get what I need instantly",
     name: "Princess Anyanwu",
     title: "Associate, Midland Partners",
     type: "Lawyer",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Princess"
+    avatar: avatarLawyerFemale
   }, {
     quote: "It explained a legal notice I didn't understand. Lifesaver!",
     name: "Jesse Ezeag",
     title: "CEO, Cocoa Technologies Ltd",
     type: "Professional",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jesse"
+    avatar: avatarProfessionalMale
   }, {
     quote: "I use it to review agreements before I sign them. It has saved me from bad deals multiple times",
     name: "Anonymous User",
     title: "Business Owner",
     type: "Professional",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anonymous"
+    avatar: avatarProfessionalFemale
   }, {
     quote: "As a final year student, Lawexa has been my secret weapon. The AI explains complex cases in simple terms and helps me understand legal principles better",
     name: "Adaora Okwu",
     title: "Student, 500L University of Nigeria",
     type: "Student",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Adaora"
+    avatar: avatarStudentFemale
   }, {
     quote: "The contract analysis feature is phenomenal. It caught clauses in my partnership agreement that could have cost me millions",
     name: "David Chen",
     title: "Tech Entrepreneur",
     type: "Professional",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=David"
+    avatar: avatarProfessionalMale
   }, {
     quote: "Lawexa's case database is incredible. I can find relevant precedents in seconds instead of hours of research",
     name: "Barrister Amina Hassan",
     title: "Senior Advocate, Supreme Court",
     type: "Lawyer",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Amina"
+    avatar: avatarLawyerMale
   }, {
     quote: "The AI tutor feature is like having a personal professor available 24/7. It's transformed how I study for my bar exams",
     name: "Michael Oduya",
     title: "Law School Graduate",
     type: "Student",
-    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael"
+    avatar: avatarStudentMale
   }];
   useEffect(() => {
     const interval = setInterval(() => {

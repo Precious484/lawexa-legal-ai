@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import lawexaLogo from '@/assets/lawexa-logo.png';
 const Footer = () => {
   const quickLinks = [{
     name: 'Blog',
@@ -36,15 +37,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <span className="text-2xl">🏛️</span>
-              <span className="text-xl font-bold text-primary">LAWEXA</span>
+            <div className="flex items-center mb-4">
+              <img src={lawexaLogo} alt="Lawexa Logo" className="h-10 w-auto" />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Legal intelligence for All. Skip the jargon, be fearless with smart legal tools for Study, life, and business
             </p>
-            <Button className="btn-gold">
-              Start with Lawexa AI
+            <Button 
+              className="btn-gold"
+              onClick={() => window.open('https://www.lawexa.com/register', '_blank')}
+            >
+              Try Lawexa
             </Button>
           </div>
 

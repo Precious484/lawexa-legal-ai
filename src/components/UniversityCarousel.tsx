@@ -27,6 +27,7 @@ const UniversityCarousel = () => {
     'University of Maiduguri',
     // Nigerian Law Firms & Companies
     'Aluko & Oyebode',
+    'Moland Partners',
     'Templars Law',
     'Banwo & Ighodalo',
     'Udo Udoma & Belo-Osagie',
@@ -41,6 +42,10 @@ const UniversityCarousel = () => {
     'Fola Arthur & Associates',
     'A.O. Alegeh & Co',
     'Olalekan Omisore & Co',
+    'Graydot Solicitors',
+    'American Tower Company',
+    'The Temple Company',
+    'Codessy Technologies',
     'Total Nigeria',
     'Shell Nigeria',
     'MTN Nigeria',
