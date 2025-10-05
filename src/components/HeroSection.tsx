@@ -44,9 +44,11 @@ const HeroSection = () => {
           loop 
           muted 
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.7)' }}
         >
+          <source src="/hero-video.mov" type="video/mp4" />
           <source src="/hero-video.mov" type="video/quicktime" />
         </video>
         {/* Dark overlay for better text readability */}

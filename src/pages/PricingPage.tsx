@@ -5,7 +5,9 @@ import PricingSection from '@/components/PricingSection';
 const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <div className="bg-black">
+        <Header />
+      </div>
       <div className="pt-16">
         <PricingSection />
       </div>
