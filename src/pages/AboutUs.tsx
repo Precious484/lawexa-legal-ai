@@ -98,11 +98,7 @@ We're on a mission to democratize legal knowledge across Africa, making professi
                   <Target className="w-10 h-10 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">Our Mission</h3>
-                <p className="text-lg text-gray-600">
-                  To democratize legal knowledge across Africa by providing AI-powered legal intelligence 
-                  that is accessible, affordable, and accurate for everyone—from law students to 
-                  everyday citizens.
-                </p>
+                <p className="text-lg text-gray-600">To democratise legal knowledge across Africa by providing AI-powered legal intelligence that is accessible, affordable, and accurate for everyone, from law students to everyday citizens.</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
@@ -190,9 +186,7 @@ We're on a mission to democratize legal knowledge across Africa, making professi
         {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Join the Revolution
-            </h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">Welcome to the Future</h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Be part of the movement that's transforming how Africa accesses legal knowledge. 
               Start your journey with Lawexa today.
