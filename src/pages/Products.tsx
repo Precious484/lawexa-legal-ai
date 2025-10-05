@@ -127,7 +127,7 @@ const Products = () => {
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 All-in-One Platform
-                <span className="text-primary block mt-2">Legal Intelligence</span>
+                
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8">
                 Discover Lawexa's comprehensive suite of AI-powered legal tools designed for students, professionals, and businesses.
