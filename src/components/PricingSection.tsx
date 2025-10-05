@@ -124,7 +124,7 @@ const PricingSection = () => {
     label: 'Yearly',
     saveLabel: 'Save 20%'
   }];
-  return <section className="py-20 bg-black text-white">
+  return <section className="py-20 text-white bg-gray-900">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
