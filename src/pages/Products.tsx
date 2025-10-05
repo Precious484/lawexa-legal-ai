@@ -184,7 +184,7 @@ const Products = () => {
                         <button className="btn-gold hover-scale flex items-center gap-2">
                           {product.cta} <ArrowRight className="w-4 h-4" />
                         </button>
-                        <p className="text-muted-foreground font-semibold">{product.pricing}</p>
+                        
                       </div>
                     </div>
                     
