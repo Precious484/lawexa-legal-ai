@@ -4,8 +4,8 @@ import PricingSection from '@/components/PricingSection';
 
 const PricingPage = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="bg-black">
+    <div className="min-h-screen bg-background animate-fade-in">
+      <div className="bg-black min-h-[64px] flex items-center">
         <Header />
       </div>
       <div className="pt-16">

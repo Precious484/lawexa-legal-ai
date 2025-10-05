@@ -115,12 +115,14 @@ const Products = () => {
       description: "Connect with specialized lawyers for complex legal matters"
     }]
   }];
-  return <div className="min-h-screen bg-background">
-      <Header />
+  return <div className="min-h-screen bg-background animate-fade-in">
+      <div className="bg-black min-h-[64px] flex items-center">
+        <Header />
+      </div>
       
       <main>
         {/* Hero Section */}
-        <section className="bg-black text-white py-20 animate-fade-in">
+        <section className="bg-black text-white py-20 pt-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">

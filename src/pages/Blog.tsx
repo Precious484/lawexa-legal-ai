@@ -72,12 +72,14 @@ const Blog = () => {
     slug: 'employment-law-updates'
   }];
   const categories = ['All Posts', 'Corporate Law', 'Legal Tech', 'Legal Education', 'Business Law', 'IP Law', 'Employment Law'];
-  return <div className="min-h-screen bg-background">
-      <Header />
+  return <div className="min-h-screen bg-background animate-fade-in">
+      <div className="bg-black min-h-[64px] flex items-center">
+        <Header />
+      </div>
       
       <main>
         {/* Hero Section */}
-        <section className="bg-lawexa-dark text-white py-20 bg-slate-950">
+        <section className="bg-lawexa-dark text-white py-20 bg-slate-950 pt-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 text-yellow-400">
