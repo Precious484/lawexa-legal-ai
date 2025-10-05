@@ -128,12 +128,8 @@ const PricingSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-            Unlock Your Legal Advantage
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
-            Join 10,000+ professionals who save 15+ hours per week with AI-powered legal intelligence
-          </p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Cut Legal Costs. Boost Efficiency</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">Join 10,000+ users saving time and money with AI-powered legal intelligence</p>
 
           {/* Pricing Toggle */}
           <div className="flex justify-center mb-8">
