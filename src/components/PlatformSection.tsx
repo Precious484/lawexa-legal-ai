@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 const PlatformSection = () => {
   const [activeTab, setActiveTab] = useState('study');
   const [activeFeature, setActiveFeature] = useState(0);
@@ -73,9 +72,7 @@ const PlatformSection = () => {
       <div className="container mx-auto px-4">
         {/* Header and Tabs */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-8">
-            The All-In-One Platform
-          </h1>
+          <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-8">Use Cases</h1>
           
           <div className="flex items-center justify-center space-x-2 p-1 bg-muted rounded-full mb-12 shadow-soft inline-flex">
             <button onClick={() => handleTabChange('study')} className={`px-6 py-2 text-sm md:text-base font-medium rounded-full transition-all duration-300 transform ${activeTab === 'study' ? 'bg-primary text-primary-foreground scale-105' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground hover:scale-102'}`}>
