@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import UniversityCarousel from '@/components/UniversityCarousel';
 import PlatformSection from '@/components/PlatformSection';
 import ComparisonSection from '@/components/ComparisonSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
@@ -65,6 +66,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <UniversityCarousel />
         <section id="features">
           <PlatformSection />
         </section>
