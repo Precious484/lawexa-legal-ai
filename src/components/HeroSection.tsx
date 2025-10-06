@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
+import HeroChatInput from './HeroChatInput';
 import avatar1 from '@/assets/avatar-1.jpg';
 import avatar2 from '@/assets/avatar-2.jpg';
 import avatar3 from '@/assets/avatar-3.jpg';
@@ -71,10 +71,8 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md">Ask any legal question, Understand Contracts and more In minutes. 
 No Law Degree Required</p>
 
-          {/* CTA Button */}
-          <Button className="btn-gold text-lg px-8 py-4 mb-12 shadow-xl">
-            Try For Free
-          </Button>
+          {/* Interactive Chat Input */}
+          <HeroChatInput />
 
           {/* Trusted By Section */}
           <div className="flex items-center justify-center space-x-4">
