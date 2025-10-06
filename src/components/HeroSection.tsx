@@ -83,11 +83,11 @@ No Law Degree Required</p>
           <HeroChatInput />
 
           {/* Trusted By Section */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <div className="flex -space-x-2">
-              {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-white" />)}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3">
+            <div className="flex -space-x-1.5">
+              {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white bg-white" />)}
             </div>
-            <p className="text-sm sm:text-base text-gray-100 drop-shadow-md text-center">
+            <p className="text-xs sm:text-sm text-gray-100 drop-shadow-md text-center">
               Trusted by <span className="text-white font-semibold">15,000+</span> students, professionals, and everyday users
             </p>
           </div>
