@@ -45,8 +45,16 @@ const HeroSection = () => {
           muted 
           playsInline
           preload="auto"
+          webkit-playsinline="true"
+          x5-playsinline="true"
           className="absolute top-0 left-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.7)' }}
+          onLoadedMetadata={(e) => {
+            const video = e.currentTarget;
+            video.play().catch(() => {
+              // Fallback if autoplay fails
+            });
+          }}
         >
           <source src="/hero-video.mov" type="video/mp4" />
           <source src="/hero-video.mov" type="video/quicktime" />
@@ -58,28 +66,28 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center z-10 relative">
         <div className="max-w-4xl mx-auto fade-in">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 drop-shadow-lg px-4">
             <span className="text-primary">Legal Intelligence</span>
             <br />
             <span className="text-primary">For </span>
-            <span className="inline-block min-w-[200px] text-left">
+            <span className="inline-block min-w-[150px] sm:min-w-[200px] text-left">
               <span className="animated-underline active">{currentWord}</span>
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md">Ask any legal question, Understand Contracts and more In minutes. 
+          <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow-md px-4">Ask any legal question, Understand Contracts and more In minutes. 
 No Law Degree Required</p>
 
           {/* Interactive Chat Input */}
           <HeroChatInput />
 
           {/* Trusted By Section */}
-          <div className="flex items-center justify-center space-x-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
             <div className="flex -space-x-2">
-              {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-10 h-10 rounded-full border-2 border-white bg-white" />)}
+              {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-white" />)}
             </div>
-            <p className="text-gray-100 drop-shadow-md">
+            <p className="text-sm sm:text-base text-gray-100 drop-shadow-md text-center">
               Trusted by <span className="text-white font-semibold">15,000+</span> students, professionals, and everyday users
             </p>
           </div>
