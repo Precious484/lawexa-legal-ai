@@ -124,7 +124,7 @@ const PricingSection = () => {
     label: 'Yearly',
     saveLabel: 'Save 20%'
   }];
-  return <section className="py-20 text-white bg-slate-950">
+  return <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -137,8 +137,8 @@ const PricingSection = () => {
 
           {/* Pricing Toggle */}
           <div className="flex justify-center mb-8">
-            <div className="bg-muted rounded-full p-1 flex items-center shadow-soft">
-              {periods.map(period => <button key={period.id} onClick={() => setSelectedPeriod(period.id)} className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${selectedPeriod === period.id ? 'bg-primary text-primary-foreground shadow-gold' : 'text-muted-foreground hover:text-foreground'}`}>
+            <div className="bg-slate-800/50 rounded-full p-1 flex items-center border border-slate-700">
+              {periods.map(period => <button key={period.id} onClick={() => setSelectedPeriod(period.id)} className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${selectedPeriod === period.id ? 'bg-white text-slate-900' : 'text-gray-400 hover:text-white'}`}>
                   {period.label}
                    {period.saveLabel && selectedPeriod !== 'monthly' && <span className="absolute -top-1 -right-1 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                       {period.saveLabel}
@@ -152,85 +152,85 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {plans.map(plan => {
           const IconComponent = plan.icon;
-          return <div key={plan.name} className={`relative bg-card p-8 rounded-2xl border flex flex-col ${plan.popular ? 'border-l-4 border-l-primary border-border' : 'border-border'} hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-large card-hover`}>
-                {plan.popular && <div className="absolute top-0 right-0 -mt-6 mr-4 py-2 px-4 rounded-full bg-primary text-primary-foreground text-sm font-bold shadow-gold">
+          return <div key={plan.name} className={`relative bg-slate-800/40 backdrop-blur-sm p-8 rounded-2xl border flex flex-col ${plan.popular ? 'border-2 border-white/20 shadow-xl shadow-white/10' : 'border-slate-700/50'} hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:border-white/30`}>
+                {plan.popular && <div className="absolute top-0 right-0 -mt-6 mr-4 py-2 px-4 rounded-full bg-white text-slate-900 text-sm font-bold shadow-lg">
                     Most Popular
                   </div>}
 
                 {/* Icon */}
-                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-muted mx-auto">
-                  <IconComponent className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-700/50 mx-auto">
+                  <IconComponent className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Plan Header */}
                 <div className="text-center mb-6">
-                  <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-primary">
+                  <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-white">
                     {plan.name}
                   </h3>
-                  <p className="font-bold text-lg mb-4 text-foreground">
+                  <p className="font-bold text-lg mb-4 text-gray-300">
                     {plan.subtitle}
                   </p>
                   
                   {/* Price */}
                   <div className="mb-2">
-                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <div className="text-sm text-muted-foreground line-through text-center mb-1">
+                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <div className="text-sm text-gray-500 line-through text-center mb-1">
                         {plan.originalPrices[selectedPeriod]}
                       </div>}
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-foreground break-words">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-white break-words">
                       {plan.prices[selectedPeriod]}
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-6">
+                  <p className="text-sm text-gray-400 mb-6">
                     {plan.period[selectedPeriod]}
                   </p>
 
                   {/* Perfect For & Description */}
-                  <p className="text-center font-semibold text-sm mb-4 text-primary">
+                  <p className="text-center font-semibold text-sm mb-4 text-white">
                     {plan.perfectFor}
                   </p>
-                  <p className="text-center text-sm mb-6 text-muted-foreground">
+                  <p className="text-center text-sm mb-6 text-gray-400">
                     {plan.description}
                   </p>
                 </div>
 
                 {/* Features */}
                 <div className="w-full flex-grow">
-                  <h4 className="font-bold mb-2 text-slate-700">
+                  <h4 className="font-bold mb-2 text-white">
                     {plan.name === 'Free Plan' ? 'What You Get:' : 'Everything in Free, PLUS:'}
                   </h4>
-                  <ul className="text-sm space-y-3 mb-6 text-foreground">
+                  <ul className="text-sm space-y-3 mb-6 text-gray-300">
                     {plan.features.map((feature, index) => <li key={index} className="flex items-center">
-                        <Check className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                        <Check className="h-5 w-5 mr-3 text-green-400 flex-shrink-0" />
                         {feature}
                       </li>)}
                   </ul>
                 </div>
 
                 {/* Savings/Testimonial */}
-                {plan.savings && <div className="bg-muted p-4 rounded-lg mb-6 w-full">
-                    <p className="font-bold text-sm text-center text-foreground">
+                {plan.savings && <div className="bg-slate-700/30 p-4 rounded-lg mb-6 w-full border border-slate-600/50">
+                    <p className="font-bold text-sm text-center text-white">
                       {plan.savings}
                     </p>
                   </div>}
 
-                {plan.testimonial && <div className="bg-muted p-4 rounded-lg mb-6 w-full">
-                    <p className="italic text-sm text-muted-foreground mb-2">
+                {plan.testimonial && <div className="bg-slate-700/30 p-4 rounded-lg mb-6 w-full border border-slate-600/50">
+                    <p className="italic text-sm text-gray-300 mb-2">
                       {plan.testimonial.quote}
                     </p>
-                    <p className="font-bold text-sm text-foreground">
+                    <p className="font-bold text-sm text-white">
                       {plan.testimonial.author}
                     </p>
                   </div>}
 
                 {/* CTA Button */}
                 <div className="w-full mt-auto">
-                  <button className={`w-full px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-soft hover:shadow-medium ${plan.buttonStyle.includes('lawexa-gold') || plan.buttonStyle.includes('bg-white') ? plan.buttonStyle.includes('lawexa-gold') ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-secondary text-secondary-foreground hover:bg-secondary/80' : plan.buttonStyle}`}>
+                  <button className={`w-full px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 ${plan.popular ? 'bg-white text-slate-900 hover:bg-gray-100' : 'bg-slate-700 text-white hover:bg-slate-600'}`}>
                     {plan.buttonText}
                   </button>
                 </div>
 
                 {/* Bottom Text */}
-                {plan.bottomText}
+                {plan.bottomText && <p className="text-center text-sm text-gray-400 mt-4">{plan.bottomText}</p>}
               </div>;
         })}
         </div>
