@@ -39,23 +39,14 @@ const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden pt-16">
       {/* Video Background with solid black background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          preload="auto"
-          webkit-playsinline="true"
-          x5-playsinline="true"
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          style={{ filter: 'brightness(0.7)' }}
-          onLoadedMetadata={(e) => {
-            const video = e.currentTarget;
-            video.play().catch(() => {
-              // Fallback if autoplay fails
-            });
-          }}
-        >
+        <video autoPlay loop muted playsInline preload="auto" webkit-playsinline="true" x5-playsinline="true" className="absolute top-0 left-0 w-full h-full object-cover" style={{
+        filter: 'brightness(0.7)'
+      }} onLoadedMetadata={e => {
+        const video = e.currentTarget;
+        video.play().catch(() => {
+          // Fallback if autoplay fails
+        });
+      }}>
           <source src="/hero-video.mov" type="video/mp4" />
           <source src="/hero-video.mov" type="video/quicktime" />
         </video>
@@ -88,7 +79,7 @@ No Law Degree Required</p>
               {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white bg-white" />)}
             </div>
             <p className="text-xs sm:text-sm text-gray-100 drop-shadow-md text-center flex items-center gap-1">
-              <span className="text-white font-semibold">15,000+</span> Active users
+              <span className="text-white font-semibold">Trusted by 15,000+</span> Active users
             </p>
           </div>
         </div>
