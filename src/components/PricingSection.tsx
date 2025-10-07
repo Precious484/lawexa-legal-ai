@@ -207,11 +207,7 @@ const PricingSection = () => {
                 </div>
 
                 {/* Savings/Testimonial */}
-                {plan.savings && <div className="bg-slate-700/30 p-4 rounded-lg mb-6 w-full border border-slate-600/50">
-                    <p className="font-bold text-sm text-center text-white">
-                      {plan.savings}
-                    </p>
-                  </div>}
+                {plan.savings}
 
                 {plan.testimonial && <div className="bg-slate-700/30 p-4 rounded-lg mb-6 w-full border border-slate-600/50">
                     <p className="italic text-sm text-gray-300 mb-2">
@@ -230,7 +226,7 @@ const PricingSection = () => {
                 </div>
 
                 {/* Bottom Text */}
-                {plan.bottomText && <p className="text-center text-sm text-gray-400 mt-4">{plan.bottomText}</p>}
+                {plan.bottomText}
               </div>;
         })}
         </div>
