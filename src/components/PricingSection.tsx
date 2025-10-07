@@ -128,7 +128,7 @@ const PricingSection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-yellow-400 md:text-5xl">
+          <h2 className="text-3xl font-bold mb-4 text-white md:text-5xl">
             Unlock Your Legal Advantage
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
@@ -236,7 +236,7 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-white text-sm">
             All plans include 24/7 customer support and regular feature updates
           </p>
         </div>

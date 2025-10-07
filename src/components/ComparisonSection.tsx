@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 const ComparisonSection = () => {
-  const [showComparison, setShowComparison] = useState(false);
   const comparisonData = [{
     feature: 'Nigerian Law Database',
     lawexa: true,
@@ -89,14 +88,10 @@ const ComparisonSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
             See how Lawexa stacks up.
           </h2>
-          <Button onClick={() => setShowComparison(!showComparison)} variant="outline" className="px-8 py-4 font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-            {showComparison ? 'Hide' : 'Compare Our Features'}
-            <span className="ml-2 font-light">{showComparison ? '↑' : '↓'}</span>
-          </Button>
         </div>
         
-        {/* Expandable Comparison Table */}
-        <div className={`overflow-hidden transition-all duration-500 ease-in-out ${showComparison ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        {/* Comparison Table - Always Visible */}
+        <div className="overflow-hidden">
           <div className="border border-border rounded-xl shadow-large bg-card p-6 mt-8">
             <div className="overflow-x-auto">
               <table className="w-full">

@@ -87,8 +87,8 @@ No Law Degree Required</p>
             <div className="flex -space-x-1.5">
               {avatars.map((avatar, index) => <img key={index} src={avatar} alt={`User ${index + 1}`} className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white bg-white" />)}
             </div>
-            <p className="text-xs sm:text-sm text-gray-100 drop-shadow-md text-center">
-              Trusted by <span className="text-white font-semibold">15,000+</span> students, professionals, and everyday users
+            <p className="text-xs sm:text-sm text-gray-100 drop-shadow-md text-center flex items-center gap-1">
+              <span className="text-white font-semibold">15,000+</span> Active users
             </p>
           </div>
         </div>

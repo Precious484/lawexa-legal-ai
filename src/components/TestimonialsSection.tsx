@@ -59,12 +59,16 @@ const TestimonialsSection = () => {
     type: "Student",
     avatar: avatarStudentMale
   }];
+  const [isPaused, setIsPaused] = useState(false);
+
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % testimonials.length);
     }, 4000); // Continuous auto-scroll
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
   const getVisibleTestimonials = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -109,7 +113,12 @@ const TestimonialsSection = () => {
             <div className="flex transition-transform duration-500 ease-in-out" style={{
             transform: `translateX(-${currentSlide * (100 / 3)}%)`
           }}>
-              {testimonials.map((testimonial, index) => <div key={index} className="w-full md:w-1/3 flex-shrink-0 px-4">
+              {testimonials.map((testimonial, index) => <div 
+                  key={index} 
+                  className="w-full md:w-1/3 flex-shrink-0 px-4"
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                >
                   <div className="bg-white rounded-xl p-6 shadow-soft card-hover h-full">
                     {/* Type Badge */}
                     <div className="mb-4">
