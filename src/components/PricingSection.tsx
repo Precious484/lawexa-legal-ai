@@ -206,9 +206,6 @@ const PricingSection = () => {
                   </ul>
                 </div>
 
-                {/* Savings/Testimonial */}
-                {plan.savings}
-
                 {plan.testimonial && <div className="bg-slate-50 p-4 rounded-lg mb-6 w-full border border-slate-200">
                     <p className="italic text-sm text-muted-foreground mb-2">
                       {plan.testimonial.quote}
