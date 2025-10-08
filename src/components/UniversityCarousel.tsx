@@ -1,92 +1,33 @@
 import { useEffect, useState } from 'react';
+import unilagLogo from '@/assets/logos/unilag-logo.png';
+import ibadanLogo from '@/assets/logos/ibadan-logo.png';
+import templarsLogo from '@/assets/logos/templars-logo.png';
+import molandLogo from '@/assets/logos/moland-logo.png';
+import kennaLogo from '@/assets/logos/kenna-logo.png';
+import knustLogo from '@/assets/logos/knust-logo.png';
+import oauLogo from '@/assets/logos/oau-logo.png';
+import bazeLogo from '@/assets/logos/baze-logo.png';
+import alukoLogo from '@/assets/logos/aluko-logo.jpeg';
+import colorfulLogo from '@/assets/logos/colorful-logo.png';
 
 const UniversityCarousel = () => {
   const [currentOffset, setCurrentOffset] = useState(0);
 
-  const universities = [
-    // Mixed universities and organizations
-    'University of Lagos',
-    'Aluko & Oyebode',
-    'University of Ibadan',
-    'Moland Partners',
-    'Ahmadu Bello University',
-    'Templars Law',
-    'University of Nigeria',
-    'Banwo & Ighodalo',
-    'Obafemi Awolowo University',
-    'American Tower Company',
-    'University of Benin',
-    'Udo Udoma & Belo-Osagie',
-    'Lagos State University',
-    'G. Elias & Co',
-    'Covenant University',
-    'The Temple Company',
-    'Babcock University',
-    'Olaniwun Ajayi LP',
-    'Lead City University',
-    'Codessy Technologies',
-    'Afe Babalola University',
-    'Jackson, Etti & Edu',
-    'University of Abuja',
-    'Advocaat Law Practice',
-    'Federal University of Technology',
-    'Perchstone & Graeys',
-    'Rivers State University',
-    'Bloomfield Law Practice',
-    'University of Port Harcourt',
-    'Kenna Partners',
-    'Delta State University',
-    'Ajumogobia & Okeke',
-    'Nnamdi Azikiwe University',
-    'Fola Arthur & Associates',
-    'University of Calabar',
-    'A.O. Alegeh & Co',
-    'Bayero University',
-    'Olalekan Omisore & Co',
-    'University of Maiduguri',
-    'Graydot Solicitors',
-    'University of Ghana',
-    'Total Nigeria',
-    'Kwame Nkrumah University',
-    'Shell Nigeria',
-    'University of Cape Coast',
-    'MTN Nigeria',
-    'Ashesi University',
-    'Dangote Group',
-    'Ghana Institute of Management',
-    'Access Bank',
-    'University of Oxford',
-    'GTBank',
-    'University of Cambridge',
-    'FirstBank Nigeria',
-    'Harvard University',
-    'Zenith Bank',
-    'London School of Economics',
-    'UBA Group',
-    'King\'s College London',
-    'Fidelity Bank',
-    'University of Edinburgh',
-    'Stanbic IBTC',
-    'University of Manchester',
-    'Ecobank Nigeria',
-    'University of Delhi',
-    'Nigerian Breweries',
-    'Jawaharlal Nehru University',
-    'Nestle Nigeria',
-    'Indian Institute of Technology',
-    'Unilever Nigeria',
-    'Bangalore University',
-    'Stanford University',
-    'Mumbai University',
-    'Yale University',
-    'Columbia University',
-    'University of Chicago',
-    'New York University',
-    'University of California'
+  const organizations = [
+    { name: 'University of Lagos', logo: unilagLogo },
+    { name: 'University of Ibadan', logo: ibadanLogo },
+    { name: 'Templars', logo: templarsLogo },
+    { name: 'Moland Partners', logo: molandLogo },
+    { name: 'Kenna Partners', logo: kennaLogo },
+    { name: 'KNUST', logo: knustLogo },
+    { name: 'Obafemi Awolowo University', logo: oauLogo },
+    { name: 'Baze University', logo: bazeLogo },
+    { name: 'Aluko & Oyebode', logo: alukoLogo },
+    { name: 'Partner Organization', logo: colorfulLogo },
   ];
 
   // Duplicate the array for seamless infinite scroll
-  const duplicatedUniversities = [...universities, ...universities];
+  const duplicatedOrganizations = [...organizations, ...organizations, ...organizations];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -112,14 +53,16 @@ const UniversityCarousel = () => {
         className="flex space-x-8 whitespace-nowrap transition-transform duration-75 ease-linear"
         style={{ transform: `translateX(${currentOffset}%)` }}
       >
-        {duplicatedUniversities.map((university, index) => (
+        {duplicatedOrganizations.map((org, index) => (
           <div
-            key={`${university}-${index}`}
-            className="flex-shrink-0 px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-slate-200/50 shadow-sm"
+            key={`${org.name}-${index}`}
+            className="flex-shrink-0 px-8 py-4 bg-white/80 backdrop-blur-sm rounded-lg border border-slate-200/50 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span className="text-sm font-medium text-slate-600">
-              {university}
-            </span>
+            <img 
+              src={org.logo} 
+              alt={org.name}
+              className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300"
+            />
           </div>
         ))}
       </div>
