@@ -124,21 +124,21 @@ const PricingSection = () => {
     label: 'Yearly',
     saveLabel: 'Save 20%'
   }];
-  return <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+  return <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-white md:text-5xl">
+          <h2 className="text-3xl font-bold mb-4 text-foreground md:text-5xl">
             Unlock Your Legal Advantage
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-muted-foreground">
             Join 10,000+ professionals who save 15+ hours per week with AI-powered legal intelligence
           </p>
 
           {/* Pricing Toggle */}
           <div className="flex justify-center mb-8">
-            <div className="bg-slate-800/50 rounded-full p-1 flex items-center border border-slate-700">
-              {periods.map(period => <button key={period.id} onClick={() => setSelectedPeriod(period.id)} className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${selectedPeriod === period.id ? 'bg-white text-slate-900' : 'text-gray-400 hover:text-white'}`}>
+            <div className="bg-white rounded-full p-1 flex items-center border border-slate-200 shadow-sm">
+              {periods.map(period => <button key={period.id} onClick={() => setSelectedPeriod(period.id)} className={`px-6 py-3 font-semibold rounded-full transition-all duration-300 relative ${selectedPeriod === period.id ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'}`}>
                   {period.label}
                    {period.saveLabel && selectedPeriod !== 'monthly' && <span className="absolute -top-1 -right-1 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
                       {period.saveLabel}
@@ -152,55 +152,55 @@ const PricingSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {plans.map(plan => {
           const IconComponent = plan.icon;
-          return <div key={plan.name} className={`relative bg-slate-800/40 backdrop-blur-sm p-8 rounded-2xl border flex flex-col ${plan.popular ? 'border-2 border-white/20 shadow-xl shadow-white/10' : 'border-slate-700/50'} hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:border-white/30`}>
-                {plan.popular && <div className="absolute top-0 right-0 -mt-6 mr-4 py-2 px-4 rounded-full bg-white text-slate-900 text-sm font-bold shadow-lg">
+          return <div key={plan.name} className={`relative bg-white p-8 rounded-2xl border flex flex-col ${plan.popular ? 'border-2 border-primary shadow-xl' : 'border-slate-200'} hover:transform hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl hover:border-primary/50`}>
+                {plan.popular && <div className="absolute top-0 right-0 -mt-6 mr-4 py-2 px-4 rounded-full bg-primary text-primary-foreground text-sm font-bold shadow-lg">
                     Most Popular
                   </div>}
 
                 {/* Icon */}
-                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-slate-700/50 mx-auto">
-                  <IconComponent className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-primary/10 mx-auto">
+                  <IconComponent className="w-8 h-8 text-primary" />
                 </div>
 
                 {/* Plan Header */}
                 <div className="text-center mb-6">
-                  <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-white">
+                  <h3 className="font-bold text-2xl sm:text-3xl mb-2 text-foreground">
                     {plan.name}
                   </h3>
-                  <p className="font-bold text-lg mb-4 text-gray-300">
+                  <p className="font-bold text-lg mb-4 text-muted-foreground">
                     {plan.subtitle}
                   </p>
                   
                   {/* Price */}
                   <div className="mb-2">
-                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <div className="text-sm text-gray-500 line-through text-center mb-1">
+                    {plan.originalPrices && plan.originalPrices[selectedPeriod] && selectedPeriod !== 'monthly' && <div className="text-sm text-muted-foreground line-through text-center mb-1">
                         {plan.originalPrices[selectedPeriod]}
                       </div>}
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-white break-words">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-foreground break-words">
                       {plan.prices[selectedPeriod]}
                     </div>
                   </div>
-                  <p className="text-sm text-gray-400 mb-6">
+                  <p className="text-sm text-muted-foreground mb-6">
                     {plan.period[selectedPeriod]}
                   </p>
 
                   {/* Perfect For & Description */}
-                  <p className="text-center font-semibold text-sm mb-4 text-white">
+                  <p className="text-center font-semibold text-sm mb-4 text-foreground">
                     {plan.perfectFor}
                   </p>
-                  <p className="text-center text-sm mb-6 text-gray-400">
+                  <p className="text-center text-sm mb-6 text-muted-foreground">
                     {plan.description}
                   </p>
                 </div>
 
                 {/* Features */}
                 <div className="w-full flex-grow">
-                  <h4 className="font-bold mb-2 text-white">
+                  <h4 className="font-bold mb-2 text-foreground">
                     {plan.name === 'Free Plan' ? 'What You Get:' : 'Everything in Free, PLUS:'}
                   </h4>
-                  <ul className="text-sm space-y-3 mb-6 text-gray-300">
+                  <ul className="text-sm space-y-3 mb-6 text-muted-foreground">
                     {plan.features.map((feature, index) => <li key={index} className="flex items-center">
-                        <Check className="h-5 w-5 mr-3 text-green-400 flex-shrink-0" />
+                        <Check className="h-5 w-5 mr-3 text-green-500 flex-shrink-0" />
                         {feature}
                       </li>)}
                   </ul>
@@ -209,18 +209,18 @@ const PricingSection = () => {
                 {/* Savings/Testimonial */}
                 {plan.savings}
 
-                {plan.testimonial && <div className="bg-slate-700/30 p-4 rounded-lg mb-6 w-full border border-slate-600/50">
-                    <p className="italic text-sm text-gray-300 mb-2">
+                {plan.testimonial && <div className="bg-slate-50 p-4 rounded-lg mb-6 w-full border border-slate-200">
+                    <p className="italic text-sm text-muted-foreground mb-2">
                       {plan.testimonial.quote}
                     </p>
-                    <p className="font-bold text-sm text-white">
+                    <p className="font-bold text-sm text-foreground">
                       {plan.testimonial.author}
                     </p>
                   </div>}
 
                 {/* CTA Button */}
                 <div className="w-full mt-auto">
-                  <button className={`w-full px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 ${plan.popular ? 'bg-white text-slate-900 hover:bg-gray-100' : 'bg-slate-700 text-white hover:bg-slate-600'}`}>
+                  <button className={`w-full px-8 py-4 font-bold rounded-xl transition-all duration-300 transform hover:scale-105 ${plan.popular ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'}`}>
                     {plan.buttonText}
                   </button>
                 </div>
@@ -232,7 +232,7 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-white text-sm">
+          <p className="text-muted-foreground text-sm">
             All plans include 24/7 customer support and regular feature updates
           </p>
         </div>
