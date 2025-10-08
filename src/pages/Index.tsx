@@ -66,7 +66,6 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <UniversityCarousel />
         <section id="features">
           <PlatformSection />
         </section>
