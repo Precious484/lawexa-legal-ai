@@ -221,27 +221,27 @@ const Products = () => {
         </section>
 
         {/* Integration Section */}
-        <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white bg-slate-950">
+        <section className="py-20 bg-slate-950 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 text-amber-400">
                 Seamless Integration
               </h2>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl text-gray-300 mb-8">
                 Lawexa integrates with your existing workflow and tools to provide legal intelligence exactly where you need it.
               </p>
               <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl animate-fade-in">
-                  <h3 className="text-xl font-bold mb-3 text-accent">API Access</h3>
-                  <p className="text-white/90">Integrate our legal AI into your applications with our robust RESTful API.</p>
+                <div className="p-6 bg-slate-900 rounded-2xl animate-fade-in border border-slate-800">
+                  <h3 className="text-xl font-bold mb-3 text-amber-400">API Access</h3>
+                  <p className="text-gray-300">Integrate our legal AI into your applications with our robust RESTful API.</p>
                 </div>
-                <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl animate-fade-in">
-                  <h3 className="text-xl font-bold mb-3 text-accent">Webhooks</h3>
-                  <p className="text-white/90">Get real-time notifications and updates directly in your existing systems.</p>
+                <div className="p-6 bg-slate-900 rounded-2xl animate-fade-in border border-slate-800">
+                  <h3 className="text-xl font-bold mb-3 text-amber-400">Webhooks</h3>
+                  <p className="text-gray-300">Get real-time notifications and updates directly in your existing systems.</p>
                 </div>
-                <div className="p-6 bg-white/10 backdrop-blur-sm rounded-2xl animate-fade-in">
-                  <h3 className="text-xl font-bold mb-3 text-accent">Single Sign-On</h3>
-                  <p className="text-white/90">Enterprise-grade security with SSO integration for seamless access control.</p>
+                <div className="p-6 bg-slate-900 rounded-2xl animate-fade-in border border-slate-800">
+                  <h3 className="text-xl font-bold mb-3 text-amber-400">Single Sign-On</h3>
+                  <p className="text-gray-300">Enterprise-grade security with SSO integration for seamless access control.</p>
                 </div>
               </div>
             </div>

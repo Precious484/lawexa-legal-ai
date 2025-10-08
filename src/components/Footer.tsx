@@ -1,10 +1,10 @@
 import { Button } from '@/components/ui/button';
-import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { Facebook, X, Linkedin, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 import lawexaLogo from '@/assets/lawexa-logo.png';
 const Footer = () => {
   const quickLinks = [{
     name: 'Blog',
-    href: '#blog'
+    href: '/blog'
   }, {
     name: 'Pricing',
     href: '#pricing'
@@ -17,19 +17,19 @@ const Footer = () => {
   }];
   const socialLinks = [{
     icon: Facebook,
-    href: '#',
+    href: 'https://www.facebook.com/lawexa',
     label: 'Facebook'
   }, {
-    icon: Twitter,
-    href: '#',
-    label: 'Twitter'
+    icon: X,
+    href: 'https://x.com/LawexaAi',
+    label: 'X'
   }, {
     icon: Linkedin,
-    href: '#',
+    href: 'https://www.linkedin.com/company/lawexa',
     label: 'LinkedIn'
   }, {
     icon: Instagram,
-    href: '#',
+    href: 'https://instagram.com/lawexaai',
     label: 'Instagram'
   }];
   return <footer className="bg-lawexa-dark text-white">
@@ -45,7 +45,7 @@ const Footer = () => {
             </p>
             <Button 
               className="btn-gold"
-              onClick={() => window.open('https://www.lawexa.com/register', '_blank')}
+              onClick={() => window.open('https://app.lawexa.com/register', '_blank')}
             >
               Try Lawexa
             </Button>
