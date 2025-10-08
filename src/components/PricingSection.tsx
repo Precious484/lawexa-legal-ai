@@ -224,9 +224,6 @@ const PricingSection = () => {
                     {plan.buttonText}
                   </button>
                 </div>
-
-                {/* Bottom Text */}
-                {plan.bottomText}
               </div>;
         })}
         </div>
